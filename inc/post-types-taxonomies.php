@@ -30,7 +30,7 @@ function paws_relax_register_custom_post_types()
         'items_list'               => __('Team list', 'paws-relax-theme'),
         'item_published'           => __('Team published.', 'paws-relax-theme'),
         'item_published_privately' => __('Team published privately.', 'paws-relax-theme'),
-        'item_revereted_to_draft'  => __('Team reverted to draft.', 'paws-relax-theme'),
+        'item_reverted_to_draft'  => __('Team reverted to draft.', 'paws-relax-theme'),
         'item_trashed'             => __('Team trashed.', 'paws-relax-theme'),
         'item_scheduled'           => __('Team scheduled.', 'paws-relax-theme'),
         'item_updated'             => __('Team updated.', 'paws-relax-theme'),
@@ -48,7 +48,7 @@ function paws_relax_register_custom_post_types()
         'show_in_admin_bar'       => true,
         'show_in_rest'            => true,
         'query_var'               => true,
-        'rewrite'                 => array('slug' => 'Team'),
+        'rewrite'                 => array('slug' => 'team'),
         'capability_type'         => 'post',
         'has_archive'             => false,
         'hierarchical'            => false,
@@ -68,9 +68,9 @@ function paws_relax_register_custom_post_types()
         ),
         'template_lock'           => 'all',
     );
-    register_post_type('paws-relax-theme', $args);
+    register_post_type('paws-team', $args);
 
-// Testimonials CPT
+    // Testimonials CPT
     $labels = array(
         'name'                  => _x( 'Testimonials', 'post type general name', 'paws-relax-theme' ),
         'singular_name'         => _x( 'Testimonial', 'post type singular name', 'paws-relax-theme' ),
@@ -108,8 +108,96 @@ function paws_relax_register_custom_post_types()
         'template_lock'      => 'all'
     );
 
-    register_post_type( 'paws-relax-testimonial', $args );
+    register_post_type( 'paws-testimonial', $args );
+
+}
+
+add_action( 'init', 'paws_relax_register_custom_post_types' );
+
+
+function paws_relax_register_taxonomies() {
+
+    // Add Testimonial Type taxonomy
+    $labels = array(
+        'name'                  => _x( 'Testimonial Types', 'taxonomy general name', 'paws-relax-theme' ),
+        'singular_name'         => _x( 'Testimonial Types', 'taxonomy singular name', 'paws-relax-theme' ),
+        'search_items'          => __( 'Search Testimonial Types', 'paws-relax-theme' ),
+        'all_items'             => __( 'All Testimonial Types', 'paws-relax-theme' ),
+        'parent_item'           => __( 'Parent Testimonial Types', 'paws-relax-theme' ),
+        'parent_item_colon'     => __( 'Parent Testimonial Types:', 'paws-relax-theme' ),
+        'edit_item'             => __( 'Edit Testimonial Types', 'paws-relax-theme' ),
+        'view_item'             => __( 'View Testimonial Types', 'paws-relax-theme' ),
+        'update_item'           => __( 'Update Testimonial Types', 'paws-relax-theme' ),
+        'add_new_item'          => __( 'Add New Testimonial Type', 'paws-relax-theme' ),
+        'new_item_name'         => __( 'New Work Testimonial Types', 'paws-relax-theme' ),
+        'menu_name'             => __( 'Testimonial Types', 'paws-relax-theme' ),
+        'template_name'         => __( 'Testimonial Types Archives', 'paws-relax-theme' ),
+        'not_found'             => __( 'No Testimonial types found.', 'paws-relax-theme' ),
+        'no_terms'              => __( 'No Testimonial types', 'paws-relax-theme' ),
+        'items_list_navigation' => __( 'Testimonial Types list navigation', 'paws-relax-theme' ),
+        'items_list'            => __( 'Testimonial Types list', 'paws-relax-theme' ),
+        'item_link'             => __( 'Testimonial Types Link', 'paws-relax-theme' ),
+        'item_link_description' => __( 'A link to a Testimonial types.', 'paws-relax-theme' ),
+    );
+     
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'show_in_rest'      => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'testimonial-types' ),
+    );
+     
+    register_taxonomy( 'paws-testimonial-types', array( 'paws-testimonial' ), $args );
+
+    // Add Team Specialties taxonomy
+    $labels = array(
+        'name'                  => _x( 'Specialty Types', 'taxonomy general name', 'paws-relax-theme' ),
+        'singular_name'         => _x( 'Specialty Types', 'taxonomy singular name', 'paws-relax-theme' ),
+        'search_items'          => __( 'Search Specialty Types', 'paws-relax-theme' ),
+        'all_items'             => __( 'All Specialty Types', 'paws-relax-theme' ),
+        'parent_item'           => __( 'Parent Specialty Types', 'paws-relax-theme' ),
+        'parent_item_colon'     => __( 'Parent Specialty Types:', 'paws-relax-theme' ),
+        'edit_item'             => __( 'Edit Specialty Types', 'paws-relax-theme' ),
+        'view_item'             => __( 'View Specialty Types', 'paws-relax-theme' ),
+        'update_item'           => __( 'Update Specialty Types', 'paws-relax-theme' ),
+        'add_new_item'          => __( 'Add New Specialty Type', 'paws-relax-theme' ),
+        'new_item_name'         => __( 'New Work Specialty Types', 'paws-relax-theme' ),
+        'menu_name'             => __( 'Specialty Types', 'paws-relax-theme' ),
+        'template_name'         => __( 'Specialty Types Archives', 'paws-relax-theme' ),
+        'not_found'             => __( 'No Specialty types found.', 'paws-relax-theme' ),
+        'no_terms'              => __( 'No Specialty types', 'paws-relax-theme' ),
+        'items_list_navigation' => __( 'Specialty Types list navigation', 'paws-relax-theme' ),
+        'items_list'            => __( 'Specialty Types list', 'paws-relax-theme' ),
+        'item_link'             => __( 'Specialty Types Link', 'paws-relax-theme' ),
+        'item_link_description' => __( 'A link to a Specialty types.', 'paws-relax-theme' ),
+    );
+     
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'show_in_rest'      => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'specialty-types' ),
+    );
+     
+    register_taxonomy( 'paws-specialty-types', array( 'paws-team' ), $args );
 
 
 
 }
+
+
+add_action( 'init', 'paws_relax_register_taxonomies' );
+
+
+function paws_relax_rewrite_flush() {
+    paws_relax_register_custom_post_types();
+    paws_relax_register_taxonomies();
+    flush_rewrite_rules();
+}
+add_action( 'after_switch_theme', 'paws_relax_rewrite_flush' );
