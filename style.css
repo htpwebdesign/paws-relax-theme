@@ -14,3 +14,7 @@ Text Domain: paws-relax-theme
 Update URI: false
 */
 
+body {
+  background-color: blue !important;
+  color: red;
+}
