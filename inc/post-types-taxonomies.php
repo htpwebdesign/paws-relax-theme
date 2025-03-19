@@ -55,18 +55,6 @@ function paws_relax_register_custom_post_types()
         'menu_position'           => 5,
         'menu_icon'               => 'dashicons-groups',
         'supports'                => array('title', 'editor', 'thumbnail'),
-        'template'                => array(
-
-            array('core/paragraph', array(
-                'placeholder'     => 'Enter name here...',
-                'lock'            => array('move' => true, 'remove' => true),
-            )),
-            array('core/paragraph', array(
-                'placeholder'     => 'Enter title here...',
-                'lock'            => array('move' => true, 'remove' => true),
-            )),
-        ),
-        'template_lock'           => 'all',
     );
     register_post_type('paws-team', $args);
 
