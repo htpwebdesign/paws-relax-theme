@@ -110,6 +110,46 @@ function paws_relax_register_custom_post_types()
 
     register_post_type( 'paws-testimonial', $args );
 
+    // FAQ CPT
+    $labels = array(
+        'name'                  => _x( 'FAQ', 'post type general name', 'paws-relax-theme' ),
+        'singular_name'         => _x( 'FAQ', 'post type singular name', 'paws-relax-theme' ),
+        'menu_name'             => _x( 'FAQs', 'admin menu', 'paws-relax-theme' ),
+        'add_new'               => _x( 'Add New', 'FAQ', 'paws-relax-theme' ),
+        'add_new_item'          => __( 'Add New FAQ', 'paws-relax-theme' ),
+        'new_item'              => __( 'New FAQ', 'paws-relax-theme' ),
+        'edit_item'             => __( 'Edit FAQ', 'paws-relax-theme' ),
+        'view_item'             => __( 'View FAQ', 'paws-relax-theme'  ),
+        'all_items'             => __( 'All FAQs', 'paws-relax-theme' ),
+        'search_items'          => __( 'Search FAQs', 'paws-relax-theme' ),
+        'parent_item_colon'     => __( 'Parent FAQs:', 'paws-relax-theme' ),
+        'not_found'             => __( 'No FAQs found.', 'paws-relax-theme' ),
+        'not_found_in_trash'    => __( 'No FAQs found in Trash.', 'paws-relax-theme' ),
+        'item_link'             => __( 'FAQ link.', 'paws-relax-theme' ),
+        'item_link_description' => __( 'A link to a FAQ.', 'paws-relax-theme' ),
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_rest'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'faqs' ),
+        'capability_type'    => 'post',
+        'has_archive'        => false,
+        'hierarchical'       => false,
+        'menu_position'      => 7,
+        'menu_icon'          => 'dashicons-pets',
+        'supports'           => array( 'title', 'editor' ),
+        'template'           => array( array( 'core/heading' ) ), array( 'core/paragraph' ),
+        'template_lock'      => 'all'
+    );
+
+    register_post_type( 'paws-faq', $args );
+
 }
 
 add_action( 'init', 'paws_relax_register_custom_post_types' );
