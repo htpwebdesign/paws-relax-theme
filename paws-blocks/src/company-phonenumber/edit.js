@@ -48,7 +48,7 @@ import { PanelBody, PanelRow, ToggleControl } from "@wordpress/components";
  */
 export default function Edit({ attributes, setAttributes }) {
 	// Set the post ID of your Contact Page
-	const postID = 8;
+	const postID = 149;
 
 	// Fetch meta data as an object and the setMeta function
 	const [meta, setMeta] = useEntityProp("postType", "page", "meta", postID);
@@ -73,16 +73,16 @@ export default function Edit({ attributes, setAttributes }) {
 						height="24"
 						viewBox="0 0 24 24"
 						role="img"
-						aria-label="Location Icon"
+						aria-label="Phone Icon"
 					>
-						<path d="M12 0c-3.148 0-6 2.553-6 5.702 0 3.148 2.602 6.907 6 12.298 3.398-5.391 6-9.15 6-12.298 0-3.149-2.851-5.702-6-5.702zm0 8c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm4 14.5c0 .828-1.79 1.5-4 1.5s-4-.672-4-1.5 1.79-1.5 4-1.5 4 .672 4 1.5z" />
+						<path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.06-.24c1.12.37 2.33.57 3.53.57a1 1 0 011 1v3.54a1 1 0 01-1 1A19.93 19.93 0 012 4a1 1 0 011-1h3.54a1 1 0 011 1c0 1.2.2 2.41.57 3.53a1 1 0 01-.24 1.06l-2.25 2.2z" />
 					</svg>
 				)}
 				<RichText
-					placeholder={__("Enter address here...", "paws-blocks")}
+					placeholder={__("Enter company phone number here...", "paws-blocks")}
 					tagName="p"
 					value={company_address}
-					onChange={(nextValue) => updateMeta("company_address", nextValue)}
+					onChange={(nextValue) => updateMeta("company_phonenumber", nextValue)}
 				/>
 			</address>
 			<InspectorControls>
@@ -93,7 +93,7 @@ export default function Edit({ attributes, setAttributes }) {
 							checked={svgIcon}
 							onChange={(value) => setAttributes({ svgIcon: value })}
 							help={__(
-								"Display an SVG icon next to the address.",
+								"Display an SVG icon next to the phonenumber.",
 								"paws-blocks",
 							)}
 						/>

@@ -22,26 +22,3 @@ function paws_blocks_paws_blocks_block_init()
 	}
 }
 add_action('init', 'paws_blocks_paws_blocks_block_init');
-
-function paws_register_custom_fields()
-{
-	register_post_meta(
-		'page',
-		'company_email',
-		array(
-			'type'         => 'string',
-			'show_in_rest' => true,
-			'single'       => true
-		)
-	);
-	register_post_meta(
-		'page',
-		'company_address',
-		array(
-			'type'         => 'string',
-			'show_in_rest' => true,
-			'single'       => true
-		)
-	);
-}
-add_action('init', 'paws_register_custom_fields');
