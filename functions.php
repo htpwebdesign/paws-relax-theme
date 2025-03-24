@@ -30,3 +30,4 @@ require get_template_directory() . '/inc/post-types-taxonomies.php';
 
 // Load custom blocks
 require get_theme_file_path() . '/paws-blocks/paws-blocks.php';
+
