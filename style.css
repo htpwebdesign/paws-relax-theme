@@ -13,3 +13,17 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: paws-relax-theme
 Update URI: false
 */
+
+.wp-block-post-template {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.wp-block-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    border-color: ;
+}
