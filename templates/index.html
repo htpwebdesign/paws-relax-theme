@@ -1,43 +1,45 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
-<main class="wp-block-group">
-	<!-- wp:query {"layout":{"inherit":true}} -->
-	<div class="wp-block-query">
-		<!-- wp:post-template -->
-		<!-- wp:group -->
-		<div class="wp-block-group">
-			<!-- wp:post-title {"isLink":true} /-->
-			<!-- wp:post-featured-image {"isLink":true} /-->
-			<!-- wp:post-content /-->
-			<!-- wp:group {"layout":{"type":"flex"}, "style":{"typography":{"fontSize":"14px"}}} -->
-			<div class="wp-block-group" style="font-size:14px">
-				<!-- wp:post-author {"showAvatar":false,"showBio":false} /-->
-				<!-- wp:post-date {"isLink":true} /-->
-				<!-- wp:post-terms {"term":"category"} /-->
-				<!-- wp:post-terms {"term": "post_tag"} /-->
-			</div>
-			<!-- /wp:group -->
-			<!-- wp:spacer {"height":40} -->
-			<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
-			<!-- /wp:spacer -->
-		</div>
-		<!-- /wp:group -->
-		<!-- /wp:post-template -->
-		<!-- wp:group {"layout":{"inherit":true}} -->
-			<div class="wp-block-group">
-			<!-- wp:query-pagination -->
-				<!-- wp:query-pagination-previous /-->
+<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"right":"10px","left":"10px"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="padding-right:10px;padding-left:10px"><!-- wp:query {"queryId":0,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null,"parents":[]},"align":"wide","layout":{"contentSize":"62.5rem","type":"constrained"}} -->
+<div class="wp-block-query alignwide"><!-- wp:heading {"textAlign":"center"} -->
+<h2 class="wp-block-heading has-text-align-center">Our Latest Blogs</h2>
+<!-- /wp:heading -->
 
-				<!-- wp:query-pagination-numbers /-->
+<!-- wp:post-template {"style":{"spacing":{"blockGap":"10px"}},"layout":{"type":"grid","columnCount":3,"minimumColumnWidth":null}} -->
+<!-- wp:group {"style":{"border":{"width":"1px","color":"#434343","radius":"10px"},"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"right":"10px","left":"10px","top":"10px","bottom":"10px"}},"dimensions":{"minHeight":"470px"}},"layout":{"type":"constrained","contentSize":"450px"}} -->
+<div class="wp-block-group has-border-color" style="border-color:#434343;border-width:1px;border-radius:10px;min-height:470px;margin-top:0;margin-bottom:0;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"auto","width":"","height":"","sizeSlug":"300x200","style":{"border":{"radius":"10px"}}} /-->
 
-				<!-- wp:query-pagination-next /-->
-			<!-- /wp:query-pagination -->
-			</div>
-			<!-- /wp:group -->
-		</div>
-	<!-- /wp:query -->
-</main>
+<!-- wp:group {"style":{"typography":{"fontSize":"14px"},"spacing":{"padding":{"right":"0","left":"0"},"blockGap":"5px"}},"layout":{"type":"flex"}} -->
+<div class="wp-block-group" style="padding-right:0;padding-left:0;font-size:14px"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}}} -->
+<p style="font-size:12px">By:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:post-author-name /-->
+
+<!-- wp:paragraph -->
+<p>Date:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:post-date {"isLink":true,"displayType":"modified","style":{"typography":{"fontSize":"12px"}}} /--></div>
 <!-- /wp:group -->
+
+<!-- wp:post-title {"level":6,"isLink":true} /-->
+
+<!-- wp:post-excerpt {"moreText":"Read More","excerptLength":20} /--></div>
+<!-- /wp:group -->
+<!-- /wp:post-template --></div>
+<!-- /wp:query -->
+
+<!-- wp:spacer -->
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:template-part {"slug":"cta","area":"uncategorized"} /--></main>
+<!-- /wp:group -->
+
+<!-- wp:spacer -->
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 
 <!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
