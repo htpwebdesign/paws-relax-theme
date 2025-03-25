@@ -2,6 +2,7 @@
 	"settings": {
 		"appearanceTools": true,
 		"color": {
+
 			"defaultPalette": false,
 			"palette": [
 				{
@@ -18,6 +19,7 @@
 					"color": "#5C757A",
 					"name": "Primary",
 					"slug": "primary"
+
 				},
 				{
 					"color": "#E8E2D8",
@@ -26,8 +28,10 @@
 				},
 				{
 					"color": "#434343",
+
 					"name": "Hover",
 					"slug": "hover"
+
 				},
 				{
 					"color": "#F3F2EE",
@@ -52,7 +56,9 @@
 		},
 		"typography": {
 			"defaultFontSizes": false,
+
 			"fluid": true,
+
 			"fontFamilies": [
 				{
 					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
@@ -100,6 +106,7 @@
 					"name": "Grown",
 					"slug": "grown"
 				}
+
 			],
 			"fontSizes": [
 				{
@@ -122,6 +129,7 @@
 					"size": "2rem",
 					"slug": "x-large"
 				}
+
 			]
 		},
 		"useRootPaddingAwareAlignments": true
@@ -136,6 +144,7 @@
 					"background": "var(--wp--preset--color--tertiary)",
 					"text": "var(--wp--preset--color--background)"
 				},
+
 				"elements": {
 					"link": {
 						"color": {
@@ -158,7 +167,9 @@
 		"elements": {
 			"button": {
 				"color": {
+
 					"background": "var(--wp--preset--color--primary)",
+
 					"text": "var(--wp--preset--color--background)"
 				},
 				"typography": {
