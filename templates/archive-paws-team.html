@@ -1,6 +1,21 @@
-<!-- /*
-Template Name: Archive Paws Team
-*/ -->
+<!-- wp:template-part {"slug":"header"} /-->
 
-<!-- DO NOT DELETE: Sample integration for overlay: -->
-<!-- wp:template-part {"slug":"single-paws-team-overlay","theme":"paws-relax-theme"} /-->
+<!-- wp:query {"queryId":21,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":true},"metadata":{"categories":["posts"],"patternName":"core/query-grid-posts","name":"Grid"}} -->
+<div class="wp-block-query"><!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"30px","right":"30px","bottom":"30px","left":"30px"}}},"layout":{"inherit":false}} -->
+<div class="wp-block-group" style="padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px"><!-- wp:post-featured-image {"aspectRatio":"3/4","style":{"border":{"radius":"20px"}}} /-->
+
+<!-- wp:post-title {"isLink":true} /-->
+
+<!-- wp:post-terms {"term":"paws-specialty-types","prefix":"Specialties: "} /-->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button">More Info</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group -->
+<!-- /wp:post-template --></div>
+<!-- /wp:query -->
+
+<!-- wp:template-part {"slug":"footer"} /-->
