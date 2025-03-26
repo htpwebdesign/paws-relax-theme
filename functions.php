@@ -93,3 +93,8 @@ function register_acf_blocks() {
 
 
 
+// google map ACF
+function my_acf_init() {
+    acf_update_setting('google_api_key', 'AIzaSyBa9euB1dlKXPfiGp28_9jtTF2OXWDglfI');
+}
+add_action('acf/init', 'my_acf_init');
