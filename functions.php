@@ -58,3 +58,8 @@ require get_template_directory() . '/inc/post-types-taxonomies.php';
 require get_theme_file_path() . '/paws-blocks/paws-blocks.php';
 
 
+// google map ACF
+function my_acf_init() {
+    acf_update_setting('google_api_key', 'AIzaSyBa9euB1dlKXPfiGp28_9jtTF2OXWDglfI');
+}
+add_action('acf/init', 'my_acf_init');
