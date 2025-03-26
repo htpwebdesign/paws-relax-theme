@@ -60,21 +60,21 @@ function paws_relax_register_custom_post_types()
 
     // Testimonials CPT
     $labels = array(
-        'name'                  => _x( 'Testimonials', 'post type general name', 'paws-relax-theme' ),
-        'singular_name'         => _x( 'Testimonial', 'post type singular name', 'paws-relax-theme' ),
-        'menu_name'             => _x( 'Testimonials', 'admin menu', 'paws-relax-theme' ),
-        'add_new'               => _x( 'Add New', 'testimonial', 'paws-relax-theme' ),
-        'add_new_item'          => __( 'Add New Testimonial', 'paws-relax-theme' ),
-        'new_item'              => __( 'New Testimonial', 'paws-relax-theme' ),
-        'edit_item'             => __( 'Edit Testimonial', 'paws-relax-theme' ),
-        'view_item'             => __( 'View Testimonial', 'paws-relax-theme'  ),
-        'all_items'             => __( 'All Testimonials', 'paws-relax-theme' ),
-        'search_items'          => __( 'Search Testimonials', 'paws-relax-theme' ),
-        'parent_item_colon'     => __( 'Parent Testimonials:', 'paws-relax-theme' ),
-        'not_found'             => __( 'No testimonials found.', 'paws-relax-theme' ),
-        'not_found_in_trash'    => __( 'No testimonials found in Trash.', 'paws-relax-theme' ),
-        'item_link'             => __( 'Testimonial link.', 'paws-relax-theme' ),
-        'item_link_description' => __( 'A link to a testimonial.', 'paws-relax-theme' ),
+        'name'                  => _x('Testimonials', 'post type general name', 'paws-relax-theme'),
+        'singular_name'         => _x('Testimonial', 'post type singular name', 'paws-relax-theme'),
+        'menu_name'             => _x('Testimonials', 'admin menu', 'paws-relax-theme'),
+        'add_new'               => _x('Add New', 'testimonial', 'paws-relax-theme'),
+        'add_new_item'          => __('Add New Testimonial', 'paws-relax-theme'),
+        'new_item'              => __('New Testimonial', 'paws-relax-theme'),
+        'edit_item'             => __('Edit Testimonial', 'paws-relax-theme'),
+        'view_item'             => __('View Testimonial', 'paws-relax-theme'),
+        'all_items'             => __('All Testimonials', 'paws-relax-theme'),
+        'search_items'          => __('Search Testimonials', 'paws-relax-theme'),
+        'parent_item_colon'     => __('Parent Testimonials:', 'paws-relax-theme'),
+        'not_found'             => __('No testimonials found.', 'paws-relax-theme'),
+        'not_found_in_trash'    => __('No testimonials found in Trash.', 'paws-relax-theme'),
+        'item_link'             => __('Testimonial link.', 'paws-relax-theme'),
+        'item_link_description' => __('A link to a testimonial.', 'paws-relax-theme'),
     );
 
     $args = array(
@@ -85,36 +85,36 @@ function paws_relax_register_custom_post_types()
         'show_in_menu'       => true,
         'show_in_rest'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'our-testimonials' ),
+        'rewrite'            => array('slug' => 'our-testimonials'),
         'capability_type'    => 'post',
         'has_archive'        => false,
         'hierarchical'       => false,
         'menu_position'      => 7,
         'menu_icon'          => 'dashicons-heart',
-        'supports'           => array( 'title', 'editor' ),
-        'template'           => array( array( 'core/pullquote' ) ),
+        'supports'           => array('title', 'editor'),
+        'template'           => array(array('core/pullquote')),
         'template_lock'      => 'all'
     );
 
-    register_post_type( 'paws-testimonial', $args );
+    register_post_type('paws-testimonial', $args);
 
     // FAQ CPT
     $labels = array(
-        'name'                  => _x( 'FAQ', 'post type general name', 'paws-relax-theme' ),
-        'singular_name'         => _x( 'FAQ', 'post type singular name', 'paws-relax-theme' ),
-        'menu_name'             => _x( 'FAQs', 'admin menu', 'paws-relax-theme' ),
-        'add_new'               => _x( 'Add New', 'FAQ', 'paws-relax-theme' ),
-        'add_new_item'          => __( 'Add New FAQ', 'paws-relax-theme' ),
-        'new_item'              => __( 'New FAQ', 'paws-relax-theme' ),
-        'edit_item'             => __( 'Edit FAQ', 'paws-relax-theme' ),
-        'view_item'             => __( 'View FAQ', 'paws-relax-theme'  ),
-        'all_items'             => __( 'All FAQs', 'paws-relax-theme' ),
-        'search_items'          => __( 'Search FAQs', 'paws-relax-theme' ),
-        'parent_item_colon'     => __( 'Parent FAQs:', 'paws-relax-theme' ),
-        'not_found'             => __( 'No FAQs found.', 'paws-relax-theme' ),
-        'not_found_in_trash'    => __( 'No FAQs found in Trash.', 'paws-relax-theme' ),
-        'item_link'             => __( 'FAQ link.', 'paws-relax-theme' ),
-        'item_link_description' => __( 'A link to a FAQ.', 'paws-relax-theme' ),
+        'name'                  => _x('FAQ', 'post type general name', 'paws-relax-theme'),
+        'singular_name'         => _x('FAQ', 'post type singular name', 'paws-relax-theme'),
+        'menu_name'             => _x('FAQs', 'admin menu', 'paws-relax-theme'),
+        'add_new'               => _x('Add New', 'FAQ', 'paws-relax-theme'),
+        'add_new_item'          => __('Add New FAQ', 'paws-relax-theme'),
+        'new_item'              => __('New FAQ', 'paws-relax-theme'),
+        'edit_item'             => __('Edit FAQ', 'paws-relax-theme'),
+        'view_item'             => __('View FAQ', 'paws-relax-theme'),
+        'all_items'             => __('All FAQs', 'paws-relax-theme'),
+        'search_items'          => __('Search FAQs', 'paws-relax-theme'),
+        'parent_item_colon'     => __('Parent FAQs:', 'paws-relax-theme'),
+        'not_found'             => __('No FAQs found.', 'paws-relax-theme'),
+        'not_found_in_trash'    => __('No FAQs found in Trash.', 'paws-relax-theme'),
+        'item_link'             => __('FAQ link.', 'paws-relax-theme'),
+        'item_link_description' => __('A link to a FAQ.', 'paws-relax-theme'),
     );
 
     $args = array(
@@ -125,49 +125,51 @@ function paws_relax_register_custom_post_types()
         'show_in_menu'       => true,
         'show_in_rest'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'faqs' ),
+        'rewrite'            => array('slug' => 'paws-faq'),
         'capability_type'    => 'post',
-        'has_archive'        => false,
+        'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => 7,
         'menu_icon'          => 'dashicons-pets',
-        'supports'           => array( 'title', 'editor' ),
-        'template'           => array( array( 'core/heading' ) ), array( 'core/paragraph' ),
+        'supports'           => array('title', 'editor'),
+        'template' => array(
+            array('core/paragraph', array())
+        ),
         'template_lock'      => 'all'
     );
 
-    register_post_type( 'paws-faq', $args );
-
+    register_post_type('paws-faq', $args);
 }
 
-add_action( 'init', 'paws_relax_register_custom_post_types' );
+add_action('init', 'paws_relax_register_custom_post_types');
 
 
-function paws_relax_register_taxonomies() {
+function paws_relax_register_taxonomies()
+{
 
     // Add Testimonial Type taxonomy
     $labels = array(
-        'name'                  => _x( 'Testimonial Types', 'taxonomy general name', 'paws-relax-theme' ),
-        'singular_name'         => _x( 'Testimonial Types', 'taxonomy singular name', 'paws-relax-theme' ),
-        'search_items'          => __( 'Search Testimonial Types', 'paws-relax-theme' ),
-        'all_items'             => __( 'All Testimonial Types', 'paws-relax-theme' ),
-        'parent_item'           => __( 'Parent Testimonial Types', 'paws-relax-theme' ),
-        'parent_item_colon'     => __( 'Parent Testimonial Types:', 'paws-relax-theme' ),
-        'edit_item'             => __( 'Edit Testimonial Types', 'paws-relax-theme' ),
-        'view_item'             => __( 'View Testimonial Types', 'paws-relax-theme' ),
-        'update_item'           => __( 'Update Testimonial Types', 'paws-relax-theme' ),
-        'add_new_item'          => __( 'Add New Testimonial Type', 'paws-relax-theme' ),
-        'new_item_name'         => __( 'New Work Testimonial Types', 'paws-relax-theme' ),
-        'menu_name'             => __( 'Testimonial Types', 'paws-relax-theme' ),
-        'template_name'         => __( 'Testimonial Types Archives', 'paws-relax-theme' ),
-        'not_found'             => __( 'No Testimonial types found.', 'paws-relax-theme' ),
-        'no_terms'              => __( 'No Testimonial types', 'paws-relax-theme' ),
-        'items_list_navigation' => __( 'Testimonial Types list navigation', 'paws-relax-theme' ),
-        'items_list'            => __( 'Testimonial Types list', 'paws-relax-theme' ),
-        'item_link'             => __( 'Testimonial Types Link', 'paws-relax-theme' ),
-        'item_link_description' => __( 'A link to a Testimonial types.', 'paws-relax-theme' ),
+        'name'                  => _x('Testimonial Types', 'taxonomy general name', 'paws-relax-theme'),
+        'singular_name'         => _x('Testimonial Types', 'taxonomy singular name', 'paws-relax-theme'),
+        'search_items'          => __('Search Testimonial Types', 'paws-relax-theme'),
+        'all_items'             => __('All Testimonial Types', 'paws-relax-theme'),
+        'parent_item'           => __('Parent Testimonial Types', 'paws-relax-theme'),
+        'parent_item_colon'     => __('Parent Testimonial Types:', 'paws-relax-theme'),
+        'edit_item'             => __('Edit Testimonial Types', 'paws-relax-theme'),
+        'view_item'             => __('View Testimonial Types', 'paws-relax-theme'),
+        'update_item'           => __('Update Testimonial Types', 'paws-relax-theme'),
+        'add_new_item'          => __('Add New Testimonial Type', 'paws-relax-theme'),
+        'new_item_name'         => __('New Work Testimonial Types', 'paws-relax-theme'),
+        'menu_name'             => __('Testimonial Types', 'paws-relax-theme'),
+        'template_name'         => __('Testimonial Types Archives', 'paws-relax-theme'),
+        'not_found'             => __('No Testimonial types found.', 'paws-relax-theme'),
+        'no_terms'              => __('No Testimonial types', 'paws-relax-theme'),
+        'items_list_navigation' => __('Testimonial Types list navigation', 'paws-relax-theme'),
+        'items_list'            => __('Testimonial Types list', 'paws-relax-theme'),
+        'item_link'             => __('Testimonial Types Link', 'paws-relax-theme'),
+        'item_link_description' => __('A link to a Testimonial types.', 'paws-relax-theme'),
     );
-     
+
     $args = array(
         'hierarchical'      => true,
         'labels'            => $labels,
@@ -175,34 +177,34 @@ function paws_relax_register_taxonomies() {
         'show_admin_column' => true,
         'show_in_rest'      => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'testimonial-types' ),
+        'rewrite'           => array('slug' => 'testimonial-types'),
     );
-     
-    register_taxonomy( 'paws-testimonial-types', array( 'paws-testimonial' ), $args );
+
+    register_taxonomy('paws-testimonial-types', array('paws-testimonial'), $args);
 
     // Add Team Specialties taxonomy
     $labels = array(
-        'name'                  => _x( 'Specialty Types', 'taxonomy general name', 'paws-relax-theme' ),
-        'singular_name'         => _x( 'Specialty Types', 'taxonomy singular name', 'paws-relax-theme' ),
-        'search_items'          => __( 'Search Specialty Types', 'paws-relax-theme' ),
-        'all_items'             => __( 'All Specialty Types', 'paws-relax-theme' ),
-        'parent_item'           => __( 'Parent Specialty Types', 'paws-relax-theme' ),
-        'parent_item_colon'     => __( 'Parent Specialty Types:', 'paws-relax-theme' ),
-        'edit_item'             => __( 'Edit Specialty Types', 'paws-relax-theme' ),
-        'view_item'             => __( 'View Specialty Types', 'paws-relax-theme' ),
-        'update_item'           => __( 'Update Specialty Types', 'paws-relax-theme' ),
-        'add_new_item'          => __( 'Add New Specialty Type', 'paws-relax-theme' ),
-        'new_item_name'         => __( 'New Work Specialty Types', 'paws-relax-theme' ),
-        'menu_name'             => __( 'Specialty Types', 'paws-relax-theme' ),
-        'template_name'         => __( 'Specialty Types Archives', 'paws-relax-theme' ),
-        'not_found'             => __( 'No Specialty types found.', 'paws-relax-theme' ),
-        'no_terms'              => __( 'No Specialty types', 'paws-relax-theme' ),
-        'items_list_navigation' => __( 'Specialty Types list navigation', 'paws-relax-theme' ),
-        'items_list'            => __( 'Specialty Types list', 'paws-relax-theme' ),
-        'item_link'             => __( 'Specialty Types Link', 'paws-relax-theme' ),
-        'item_link_description' => __( 'A link to a Specialty types.', 'paws-relax-theme' ),
+        'name'                  => _x('Specialty Types', 'taxonomy general name', 'paws-relax-theme'),
+        'singular_name'         => _x('Specialty Types', 'taxonomy singular name', 'paws-relax-theme'),
+        'search_items'          => __('Search Specialty Types', 'paws-relax-theme'),
+        'all_items'             => __('All Specialty Types', 'paws-relax-theme'),
+        'parent_item'           => __('Parent Specialty Types', 'paws-relax-theme'),
+        'parent_item_colon'     => __('Parent Specialty Types:', 'paws-relax-theme'),
+        'edit_item'             => __('Edit Specialty Types', 'paws-relax-theme'),
+        'view_item'             => __('View Specialty Types', 'paws-relax-theme'),
+        'update_item'           => __('Update Specialty Types', 'paws-relax-theme'),
+        'add_new_item'          => __('Add New Specialty Type', 'paws-relax-theme'),
+        'new_item_name'         => __('New Work Specialty Types', 'paws-relax-theme'),
+        'menu_name'             => __('Specialty Types', 'paws-relax-theme'),
+        'template_name'         => __('Specialty Types Archives', 'paws-relax-theme'),
+        'not_found'             => __('No Specialty types found.', 'paws-relax-theme'),
+        'no_terms'              => __('No Specialty types', 'paws-relax-theme'),
+        'items_list_navigation' => __('Specialty Types list navigation', 'paws-relax-theme'),
+        'items_list'            => __('Specialty Types list', 'paws-relax-theme'),
+        'item_link'             => __('Specialty Types Link', 'paws-relax-theme'),
+        'item_link_description' => __('A link to a Specialty types.', 'paws-relax-theme'),
     );
-     
+
     $args = array(
         'hierarchical'      => true,
         'labels'            => $labels,
@@ -210,22 +212,20 @@ function paws_relax_register_taxonomies() {
         'show_admin_column' => true,
         'show_in_rest'      => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'specialty-types' ),
+        'rewrite'           => array('slug' => 'specialty-types'),
     );
-     
-    register_taxonomy( 'paws-specialty-types', array( 'paws-team' ), $args );
 
-
-
+    register_taxonomy('paws-specialty-types', array('paws-team'), $args);
 }
 
 
-add_action( 'init', 'paws_relax_register_taxonomies' );
+add_action('init', 'paws_relax_register_taxonomies');
 
 
-function paws_relax_rewrite_flush() {
+function paws_relax_rewrite_flush()
+{
     paws_relax_register_custom_post_types();
     paws_relax_register_taxonomies();
     flush_rewrite_rules();
 }
-add_action( 'after_switch_theme', 'paws_relax_rewrite_flush' );
+add_action('after_switch_theme', 'paws_relax_rewrite_flush');
