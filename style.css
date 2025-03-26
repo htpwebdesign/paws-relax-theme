@@ -16,7 +16,8 @@ Update URI: false
 
 
 /* grid styling for faq archive custom template */
-.custom-template-faqs .wp-block-post-template {
+
+/* .custom-template-faqs .wp-block-post-template {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
@@ -30,4 +31,26 @@ Update URI: false
     border: 2px solid #5C757A;
     border-radius: 24px;
     padding: 16px;
+} */
+
+.custom-template-faqs .wp-block-post-template {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.custom-template-faqs .wp-block-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    height: 100%;
+    border: 2px solid #5C757A;
+    border-radius: 24px;
+    padding: 16px;
+}
+
+@media (min-width: 480px) {
+    .custom-template-faqs .wp-block-post-template {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
 }
