@@ -1,5 +1,15 @@
 <!-- wp:template-part {"slug":"header"} /-->
 
+<!-- wp:heading {"textAlign":"center","level":1} -->
+<h1 class="wp-block-heading has-text-align-center">Meet our Wonderful, dog-loving team!</h1>
+<!-- /wp:heading -->
+
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="http://paws-relax.local/services/">Book Now</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
 <!-- wp:query {"queryId":21,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":true},"metadata":{"categories":["posts"],"patternName":"core/query-grid-posts","name":"Grid"}} -->
 <div class="wp-block-query"><!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"30px","right":"30px","bottom":"30px","left":"30px"}}},"layout":{"inherit":false}} -->
@@ -7,13 +17,11 @@
 
 <!-- wp:post-title {"isLink":true} /-->
 
+<!-- wp:acf/work-title-block {"name":"acf/work-title-block","data":{"title":"","_title":"field_67db16fcb9b61","name":"","_name":"field_67db1bb79f70a","bio":"","_bio":"field_67db1726b9b62","availability":"","_availability":"field_67db1786b9b63","email":"","_email":"field_67db1894b9b64","assigned_massage_therapist":"","_assigned_massage_therapist":"field_67dc6295d1f05"},"mode":"preview"} /-->
+
 <!-- wp:post-terms {"term":"paws-specialty-types","prefix":"Specialties: "} /-->
 
-<!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button">More Info</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div>
+<!-- wp:acf/more-info-block {"name":"acf/more-info-block","data":[],"mode":"preview"} /--></div>
 <!-- /wp:group -->
 <!-- /wp:post-template --></div>
 <!-- /wp:query -->

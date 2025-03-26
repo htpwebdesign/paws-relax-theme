@@ -58,3 +58,38 @@ require get_template_directory() . '/inc/post-types-taxonomies.php';
 require get_theme_file_path() . '/paws-blocks/paws-blocks.php';
 
 
+add_action('acf/init', 'register_acf_blocks');
+function register_acf_blocks() {
+    // Work Title Block
+    acf_register_block_type(array(
+        'name'              => 'work-title-block',
+        'title'             => __('Work Title Block'),
+        'description'       => __('Displays the work title dynamically for the queried team member.'),
+        'render_template'   => 'parts/acf-blocks/work-title-block.php',
+        'category'          => 'layout',
+        'icon'              => 'admin-generic',
+        'keywords'          => array('work', 'title', 'team'),
+        'supports'          => array(
+            'align' => false,
+            'jsx'   => false,
+        ),
+    ));
+
+    // More Info Block
+    acf_register_block_type(array(
+        'name'              => 'more-info-block',
+        'title'             => __('More Info Block'),
+        'description'       => __('Displays a button to show detailed therapist information in an overlay.'),
+        'render_template'   => 'parts/acf-blocks/more-info-block.php',
+        'category'          => 'layout',
+        'icon'              => 'admin-links',
+        'keywords'          => array('info', 'button', 'overlay'),
+        'supports'          => array(
+            'align' => false,
+            'jsx'   => false,
+        ),
+    ));
+}
+
+
+
