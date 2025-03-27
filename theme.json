@@ -149,6 +149,93 @@
 					"fontWeight": "600",
 					"textTransform": "uppercase"
 				}
+			},
+			"core/pullquote": {
+				"border": {
+					"bottom": {
+						"style": "solid",
+						"width": "1px"
+					},
+					"color": null,
+					"left": {
+						"style": "solid",
+						"width": "1px"
+					},
+					"radius": "8px",
+					"right": {
+						"style": "solid",
+						"width": "1px"
+					},
+					"style": null,
+					"top": {
+						"style": "solid",
+						"width": "1px"
+					},
+					"width": null
+				},
+				"spacing": {
+					"margin": {
+						"bottom": "0",
+						"left": "0",
+						"right": "0",
+						"top": "0"
+					},
+					"padding": {
+						"bottom": "var(--wp--preset--spacing--30)",
+						"left": "var(--wp--preset--spacing--30)",
+						"right": "var(--wp--preset--spacing--30)",
+						"top": "var(--wp--preset--spacing--30)"
+					}
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--montserrat)",
+					"fontSize": "var(--wp--preset--font-size--small)",
+					"lineHeight": "1.5"
+				}
+			},
+			"core/quote": {
+				"border": {
+					"bottom": {
+						"style": "none",
+						"width": "0px"
+					},
+					"color": null,
+					"left": {
+						"style": "none",
+						"width": "0px"
+					},
+					"radius": "0px",
+					"right": {
+						"style": "none",
+						"width": "0px"
+					},
+					"style": null,
+					"top": {
+						"style": "none",
+						"width": "0px"
+					},
+					"width": null
+				},
+				"spacing": {
+					"blockGap": "var(--wp--preset--spacing--40)",
+					"margin": {
+						"bottom": "0",
+						"left": "0",
+						"right": "0",
+						"top": "0"
+					},
+					"padding": {
+						"bottom": "var(--wp--preset--spacing--30)",
+						"left": "var(--wp--preset--spacing--30)",
+						"right": "var(--wp--preset--spacing--30)",
+						"top": "var(--wp--preset--spacing--30)"
+					}
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--montserrat)",
+					"fontSize": "var(--wp--preset--font-size--small)",
+					"lineHeight": "1"
+				}
 			}
 		},
 		"color": {

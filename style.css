@@ -14,39 +14,22 @@ Text Domain: paws-relax-theme
 Update URI: false
 */
 
-
-/* grid styling for faq archive custom template */
-
-/* .custom-template-faqs .wp-block-post-template {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-}
-
-.custom-template-faqs .wp-block-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    height: 100%;
-    border: 2px solid #5C757A;
-    border-radius: 24px;
-    padding: 16px;
-} */
-
+/* FAQ Page Styling */
 .custom-template-faqs .wp-block-post-template {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 24px 0;
 }
 
 .custom-template-faqs .wp-block-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    height: 100%;
-    border: 2px solid #5C757A;
-    border-radius: 24px;
-    padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 100%;
+  border: 2px solid #5c757a;
+  border-radius: 24px;
+  padding: 16px;
 }
 
 @media (min-width: 480px) {
@@ -54,3 +37,124 @@ Update URI: false
         grid-template-columns: repeat(3, 1fr) !important;
     }
 }
+
+
+/* Services Page Styling */
+.services-description{
+  margin-bottom: 4rem;
+}
+
+.orderby{
+  border: solid 2px #5C757A;
+  border-radius: 4px;
+  outline: none;
+  padding: 2px 4px;
+}
+
+ul.wp-block-woocommerce-product-template{
+  padding: 1rem;
+}
+
+.wp-block-woocommerce-product-template li{
+  border: solid 3px #5C757A;
+  border-radius: 24px;
+}
+
+/* Home Page Styling */
+
+.woocommerce ul.products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.woocommerce ul.products span {
+    display: none;
+}
+
+.woocommerce ul.products li.product {
+    border: solid 3px #5C757A;
+    border-radius: 24px;
+    text-align: center;
+    width: 350px;
+    height: 450px;
+}
+
+.woocommerce ul.products li.product img {
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+}
+
+.wp-block-pullquote p::before {
+    content: "\f10d";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 50px;
+    color: #747F64;
+    margin-right: 10px;
+    display: block;
+    text-align: left;
+}
+
+.wp-block-pullquote cite::before {
+    content: "\f007";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 800;
+    font-size: 30px;
+    color: #747F64;
+    margin-right: 10px;
+    font-style: normal;
+}
+
+.home .woocommerce ul.products li.product .woocommerce-loop-product__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.home .woocommerce ul.products li.product .button {
+  border-radius: 8px;
+}
+
+/* Team Page Styling */
+.acf-work-title-block{
+  font-size: 1.25rem;
+}
+
+.more-info-button{
+  background-color: #cb7a5c;
+  color: #f3f2ee;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+}
+
+.more-info-button:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+
+.team-query-loop ul{
+  gap: 1rem 0;
+}
+
+@media (min-width: 48rem){
+  .team-query-loop ul{
+    gap: 2.5rem 1.5rem;
+  }
+}
+
+/* hiding footer map on contact page */
+
+/* .page-id-324 .wp-block-column[style*="flex-basis:50%"] {
+  display: none;
+}
+
+footer a {
+  text-decoration: none;
+  font-weight: 400;
+} */
