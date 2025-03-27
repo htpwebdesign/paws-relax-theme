@@ -1,10 +1,11 @@
 <?php
+
 /**
  * @see https://github.com/WordPress/gutenberg/blob/trunk/docs/reference-guides/block-api/block-metadata.md#render
  */
 ?>
 <address <?php echo get_block_wrapper_attributes(); ?>>
-<?php if ( $attributes[ 'svgIcon' ] ) : ?>
+	<?php if ($attributes['svgIcon']) : ?>
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img"
 			aria-label="Email Icon">
 			<path
