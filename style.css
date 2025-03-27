@@ -14,8 +14,7 @@ Text Domain: paws-relax-theme
 Update URI: false
 */
 
-/* grid styling for faq archive custom template */
-
+/* FAQ Page Styling */
 .custom-template-faqs .wp-block-post-template {
   display: grid;
   grid-template-columns: 1fr;
@@ -40,8 +39,7 @@ Update URI: false
 }
 
 
-/* Services/Products Page Styling */
-
+/* Services Page Styling */
 .services-description{
   margin-bottom: 4rem;
 }
@@ -62,7 +60,8 @@ ul.wp-block-woocommerce-product-template{
   border-radius: 24px;
 }
 
-/* HomePage Services/ Testimonial Styling */
+/* Home Page Styling */
+
 .woocommerce ul.products {
     display: flex;
     justify-content: center;
@@ -117,3 +116,45 @@ ul.wp-block-woocommerce-product-template{
 .home .woocommerce ul.products li.product .button {
   border-radius: 8px;
 }
+
+/* Team Page Styling */
+.acf-work-title-block{
+  font-size: 1.25rem;
+}
+
+.more-info-button{
+  background-color: #cb7a5c;
+  color: #f3f2ee;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+}
+
+.more-info-button:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+
+.team-query-loop ul{
+  gap: 1rem 0;
+}
+
+@media (min-width: 48rem){
+  .team-query-loop ul{
+    gap: 2.5rem 1.5rem;
+  }
+}
+
+/* hiding footer map on contact page */
+
+/* .page-id-324 .wp-block-column[style*="flex-basis:50%"] {
+  display: none;
+}
+
+footer a {
+  text-decoration: none;
+  font-weight: 400;
+} */
