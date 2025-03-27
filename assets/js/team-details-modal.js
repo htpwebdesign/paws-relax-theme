@@ -1,16 +1,41 @@
-
 // Event Listener for Team Member "More Info" Button
 document.addEventListener("DOMContentLoaded", function () {
     const buttons = document.querySelectorAll(".more-info-button");
 
     buttons.forEach(function (button) {
         button.addEventListener("click", function () {
-            const postId = button.getAttribute("data-id"); 
-            fetchTeamMemberDetails(postId); // Call the function to fetch ACF data
+            const postId = button.getAttribute("data-id");
+
+            // Fetch ACF data via AJAX
+            fetchACFData(postId);
         });
     });
 });
 
+// Fetch ACF data function
+function fetchACFData(postId) {
+    fetch(myAjax.ajaxurl, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+            action: "fetch_team_member_details", // WordPress AJAX action name
+            post_id: postId, // The post ID to fetch data for
+        }),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.success) {
+                showModal(data.data); // Pass the fetched HTML to the modal
+            } else {
+                console.error("Failed to fetch ACF data:", data.data);
+            }
+        })
+        .catch((error) => {
+            console.error("AJAX error:", error);
+        });
+}
 
 // Show Modal with Team Details
 function showModal(content) {

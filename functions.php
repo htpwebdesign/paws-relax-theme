@@ -107,16 +107,17 @@ function register_acf_blocks() {
 
 
 // The AJAX handler function to fetch and return ACF data
+// The AJAX handler function
 add_action('wp_ajax_fetch_team_member_details', 'fetch_team_member_details');
 add_action('wp_ajax_nopriv_fetch_team_member_details', 'fetch_team_member_details');
 
 function fetch_team_member_details() {
-    $post_id = intval($_POST['post_id']);
+    $post_id = intval($_POST['post_id']); // Sanitize the POST data
     if (!$post_id) {
-        wp_send_json_error('Invalid post ID.');
+        wp_send_json_error('Invalid post ID.'); // Return error if ID is missing
         return;
     }
-
+    
     // Fetch ACF fields
     $team_member_name = get_field('name', $post_id);
     $team_member_title = get_field('title', $post_id);
@@ -144,9 +145,8 @@ function fetch_team_member_details() {
     </div>
     <?php
     $html = ob_get_clean();
-    wp_send_json_success($html);
+    wp_send_json_success($html); // Send back the HTML as a response
 }
-
     
 
 
