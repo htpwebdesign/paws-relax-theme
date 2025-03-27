@@ -61,6 +61,8 @@ ul.wp-block-woocommerce-product-template{
   border: solid 3px #5C757A;
   border-radius: 24px;
 }
+
+/* HomePage Services/ Testimonial Styling */
 .woocommerce ul.products {
     display: flex;
     justify-content: center;
@@ -72,16 +74,16 @@ ul.wp-block-woocommerce-product-template{
 }
 
 .woocommerce ul.products li.product {
-    border: 2px solid hsl(0, 0%, 76%);
-    border-radius: 10px;
-    padding: 20px;
+    border: solid 3px #5C757A;
+    border-radius: 24px;
     text-align: center;
     width: 350px;
-    height: 385px;
+    height: 450px;
 }
 
 .woocommerce ul.products li.product img {
-    border-radius: 8px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
 }
 
 .wp-block-pullquote p::before {
@@ -103,4 +105,15 @@ ul.wp-block-woocommerce-product-template{
     color: #747F64;
     margin-right: 10px;
     font-style: normal;
+}
+
+.home .woocommerce ul.products li.product .woocommerce-loop-product__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.home .woocommerce ul.products li.product .button {
+  border-radius: 8px;
 }
