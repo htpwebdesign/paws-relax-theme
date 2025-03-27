@@ -105,60 +105,6 @@ function register_acf_blocks() {
     ));
 }
 
-function enqueue_overlay_script_for_template() {
-    if (is_page_template('archive-paws-team.html')) { // Replace with your template filename
-        wp_enqueue_script(
-            'therapist-overlay-script',
-            get_template_directory_uri() . '/assets/js/therapist-overlay.js',
-            array('jquery'),
-            null,
-            true
-        );
-
-        wp_localize_script('therapist-overlay-script', 'pawsAjax', array(
-            'ajaxurl' => admin_url('admin-ajax.php'),
-        ));
-    }
-}
-add_action('wp_enqueue_scripts', 'enqueue_overlay_script_for_template');
-
-
-
-
-add_action('wp_ajax_load_therapist_details', 'load_therapist_details');
-add_action('wp_ajax_nopriv_load_therapist_details', 'load_therapist_details');
-
-function load_therapist_details() {
-    $post_id = intval($_POST['post_id']); // Get the post ID from the request
-
-    // Fetch data (ACF + CPT)
-    $name = get_the_title($post_id); // Post title
-    $work_title = get_post_meta($post_id, 'title', true); // ACF field
-    $bio = get_field('bio', $post_id); // Another ACF field
-    $availability = get_field('availability', $post_id); // Another ACF field
-    $email = get_field('email', $post_id); // Another ACF field
-
-    // Output details as HTML
-    if ($name) {
-        echo '<h2>' . esc_html($name) . '</h2>';
-        echo '<p><strong>Work Title:</strong> ' . esc_html($work_title) . '</p>';
-        echo '<p><strong>Bio:</strong> ' . esc_html($bio) . '</p>';
-        echo '<p><strong>Availability:</strong> ' . esc_html($availability) . '</p>';
-        echo '<p><strong>Email:</strong> ' . esc_html($email) . '</p>';
-
-    } else {
-        echo '<p>Details not found.</p>';
-    }
-
-    wp_die(); // Terminate AJAX request
-}
-
-
-
-
-
-
-
 
 // The AJAX handler function to fetch and return ACF data
 add_action('wp_ajax_fetch_team_member_details', 'fetch_team_member_details');
