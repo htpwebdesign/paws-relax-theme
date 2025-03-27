@@ -157,3 +157,9 @@ function my_acf_init() {
     acf_update_setting('google_api_key', 'AIzaSyBa9euB1dlKXPfiGp28_9jtTF2OXWDglfI');
 }
 add_action('acf/init', 'my_acf_init');
+
+// Get a Icon from font-awesome
+function load_font_awesome() {
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+}
+add_action('wp_enqueue_scripts', 'load_font_awesome');

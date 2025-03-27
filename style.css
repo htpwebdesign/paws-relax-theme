@@ -49,9 +49,9 @@ Update URI: false
 }
 
 @media (min-width: 480px) {
-  .custom-template-faqs .wp-block-post-template {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
+    .custom-template-faqs .wp-block-post-template {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
 }
 
 
@@ -75,4 +75,47 @@ ul.wp-block-woocommerce-product-template{
 .wp-block-woocommerce-product-template li{
   border: solid 3px #5C757A;
   border-radius: 24px;
+}
+.woocommerce ul.products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.woocommerce ul.products span {
+    display: none;
+}
+
+.woocommerce ul.products li.product {
+    border: 2px solid hsl(0, 0%, 76%);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 350px;
+    height: 385px;
+}
+
+.woocommerce ul.products li.product img {
+    border-radius: 8px;
+}
+
+.wp-block-pullquote p::before {
+    content: "\f10d";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 50px;
+    color: #747F64;
+    margin-right: 10px;
+    display: block;
+    text-align: left;
+}
+
+.wp-block-pullquote cite::before {
+    content: "\f007";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 800;
+    font-size: 30px;
+    color: #747F64;
+    margin-right: 10px;
+    font-style: normal;
 }
