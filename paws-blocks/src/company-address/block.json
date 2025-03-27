@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "paws-blocks/company-address",
+	"version": "1.0.0",
+	"title": "Company Address",
+	"category": "text",
+	"icon": "location",
+	"description": "Output the company address with an optional icon.",
+	"example": {},
+	"supports": {
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"textAlign": true
+		}
+	},
+	"attributes": {
+		"svgIcon": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"textdomain": "paws-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}
