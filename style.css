@@ -139,3 +139,14 @@ ul.wp-block-woocommerce-product-template{
     gap: 2.5rem 1.5rem;
   }
 }
+
+/* hiding footer map on contact page */
+
+/* .page-id-324 .wp-block-column[style*="flex-basis:50%"] {
+  display: none;
+}
+
+footer a {
+  text-decoration: none;
+  font-weight: 400;
+} */
