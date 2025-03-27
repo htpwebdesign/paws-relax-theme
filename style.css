@@ -53,3 +53,26 @@ Update URI: false
     grid-template-columns: repeat(3, 1fr) !important;
   }
 }
+
+
+/* Services/Products Page Styling */
+
+.services-description{
+  margin-bottom: 4rem;
+}
+
+.orderby{
+  border: solid 2px #5C757A;
+  border-radius: 4px;
+  outline: none;
+  padding: 2px 4px;
+}
+
+ul.wp-block-woocommerce-product-template{
+  padding: 1rem;
+}
+
+.wp-block-woocommerce-product-template li{
+  border: solid 3px #5C757A;
+  border-radius: 24px;
+}
