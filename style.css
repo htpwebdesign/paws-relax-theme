@@ -16,26 +16,11 @@ Update URI: false
 
 /* grid styling for faq archive custom template */
 
-/* .custom-template-faqs .wp-block-post-template {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-}
-
-.custom-template-faqs .wp-block-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    height: 100%;
-    border: 2px solid #5C757A;
-    border-radius: 24px;
-    padding: 16px;
-} */
-
 .custom-template-faqs .wp-block-post-template {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
+  padding: 24px 0;
 }
 
 .custom-template-faqs .wp-block-group {
@@ -54,6 +39,28 @@ Update URI: false
     }
 }
 
+
+/* Services/Products Page Styling */
+
+.services-description{
+  margin-bottom: 4rem;
+}
+
+.orderby{
+  border: solid 2px #5C757A;
+  border-radius: 4px;
+  outline: none;
+  padding: 2px 4px;
+}
+
+ul.wp-block-woocommerce-product-template{
+  padding: 1rem;
+}
+
+.wp-block-woocommerce-product-template li{
+  border: solid 3px #5C757A;
+  border-radius: 24px;
+}
 .woocommerce ul.products {
     display: flex;
     justify-content: center;
