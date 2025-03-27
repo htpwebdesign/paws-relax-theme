@@ -107,7 +107,6 @@ function register_acf_blocks() {
 
 
 // The AJAX handler function to fetch and return ACF data
-// The AJAX handler function
 add_action('wp_ajax_fetch_team_member_details', 'fetch_team_member_details');
 add_action('wp_ajax_nopriv_fetch_team_member_details', 'fetch_team_member_details');
 
@@ -147,7 +146,16 @@ function fetch_team_member_details() {
     $html = ob_get_clean();
     wp_send_json_success($html); // Send back the HTML as a response
 }
-    
+
+
+// Teams Page custom link re-direct to Services Page
+add_filter('term_link', 'custom_taxonomy_link', 10, 3);
+function custom_taxonomy_link($url, $term, $taxonomy) {
+    if ($taxonomy === 'paws-specialty-types') {
+        $url = site_url('/services/');
+    }
+    return $url;
+}
 
 
 
