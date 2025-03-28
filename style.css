@@ -151,5 +151,6 @@ ul.wp-block-woocommerce-product-template{
 /* Footer nav Styling */
 .footer-nav {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 150px);
+  gap: 3rem;
 }
