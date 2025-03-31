@@ -20,7 +20,16 @@ function paws_enqueues()
         'all'
     );
 
-    // Load the custom JavaScript file
+    wp_enqueue_script(
+        'single-product-button',
+        get_template_directory_uri() . '/assets/js/single-product-button.js',
+        array(), // No dependencies
+        null, // No versioning
+        false // Load in the footer
+    );
+    
+
+    // Team Modal JavaScript file
     wp_enqueue_script(
         'team-details-modal',
         get_template_directory_uri() . '/assets/js/team-details-modal.js',
@@ -29,7 +38,7 @@ function paws_enqueues()
         false // Load in the footer
     );
 
-    // Localize the script with the AJAX URL
+    // AJAX URL for team details
     wp_localize_script(
         'team-details-modal',
         'myAjax',
@@ -176,6 +185,7 @@ function load_font_awesome()
 }
 add_action('wp_enqueue_scripts', 'load_font_awesome');
 
+
 // Custom Login
 function custom_login_logo_url()
 {
@@ -194,3 +204,4 @@ function custom_login_styles()
     wp_enqueue_style('custom-login', get_stylesheet_directory_uri() . '/custom-login.css');
 }
 add_action('login_enqueue_scripts', 'custom_login_styles');
+

@@ -32,10 +32,12 @@ Update URI: false
   padding: 16px;
 }
 
-@media (min-width: 480px) {
-  .custom-template-faqs .wp-block-post-template {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
+
+@media (min-width: 30em) {
+    .custom-template-faqs .wp-block-post-template {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
 }
 
 /* Services Page Styling */
@@ -140,8 +142,10 @@ ul.wp-block-woocommerce-product-template {
   gap: 1rem 0;
 }
 
-@media (min-width: 48rem) {
-  .team-query-loop ul {
+
+@media (min-width: 48em){
+  .team-query-loop ul{
+
     gap: 2.5rem 1.5rem;
   }
 }
@@ -151,34 +155,17 @@ ul.wp-block-woocommerce-product-template {
   display: grid;
   grid-template-columns: repeat(2, 150px);
 }
-/* Login Page Styling */
-/* Background customization */
-body.login {
-  background: #cb7a5c;
+
+/* Single Service Page Styling */
+.woocommerce-product-gallery__image img {
+  border-radius: 24px;
 }
 
-/* Style the login form */
-.login form {
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.wc-bookings-booking-form{
+  border-radius: 24px;
 }
 
-/* Customize input fields */
-.login form input {
-  border-radius: 5px;
-  padding: 10px;
-  width: 100%;
-  border: 1px solid #ddd;
+.wc-bookings-booking-form .bookable-day{
+  background-color: #747F64;
 }
 
-/* Change login button */
-.wp-core-ui .button-primary {
-  background: #ff4500;
-  border-color: #ff4500;
-  text-transform: uppercase;
-}
-.wp-core-ui .button-primary:hover {
-  background: #d03a00;
-}
