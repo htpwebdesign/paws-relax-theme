@@ -32,82 +32,83 @@ Update URI: false
   padding: 16px;
 }
 
+
 @media (min-width: 30em) {
     .custom-template-faqs .wp-block-post-template {
         grid-template-columns: repeat(3, 1fr) !important;
     }
+
 }
 
-
 /* Services Page Styling */
-.services-description{
+.services-description {
   margin-bottom: 4rem;
 }
 
-.orderby{
-  border: solid 2px #5C757A;
+.orderby {
+  border: solid 2px #5c757a;
   border-radius: 4px;
   outline: none;
   padding: 2px 4px;
 }
 
-ul.wp-block-woocommerce-product-template{
+ul.wp-block-woocommerce-product-template {
   padding: 1rem;
 }
 
-.wp-block-woocommerce-product-template li{
-  border: solid 3px #5C757A;
+.wp-block-woocommerce-product-template li {
+  border: solid 3px #5c757a;
   border-radius: 24px;
 }
 
 /* Home Page Styling */
 
 .woocommerce ul.products {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .woocommerce ul.products span {
-    display: none;
+  display: none;
 }
 
 .woocommerce ul.products li.product {
-    border: solid 3px #5C757A;
-    border-radius: 24px;
-    text-align: center;
-    width: 350px;
-    height: 450px;
+  border: solid 3px #5c757a;
+  border-radius: 24px;
+  text-align: center;
+  width: 350px;
+  height: 450px;
 }
 
 .woocommerce ul.products li.product img {
-    border-top-left-radius: 24px;
-    border-top-right-radius: 24px;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
 }
 
 .wp-block-pullquote p::before {
-    content: "\f10d";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    font-size: 50px;
-    color: #747F64;
-    margin-right: 10px;
-    display: block;
-    text-align: left;
+  content: "\f10d";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 50px;
+  color: #747f64;
+  margin-right: 10px;
+  display: block;
+  text-align: left;
 }
 
 .wp-block-pullquote cite::before {
-    content: "\f007";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 800;
-    font-size: 30px;
-    color: #747F64;
-    margin-right: 10px;
-    font-style: normal;
+  content: "\f007";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 800;
+  font-size: 30px;
+  color: #747f64;
+  margin-right: 10px;
+  font-style: normal;
 }
 
 .home .woocommerce ul.products li.product .woocommerce-loop-product__title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 2px;
@@ -118,11 +119,11 @@ ul.wp-block-woocommerce-product-template{
 }
 
 /* Team Page Styling */
-.acf-work-title-block{
+.acf-work-title-block {
   font-size: 1.25rem;
 }
 
-.more-info-button{
+.more-info-button {
   background-color: #cb7a5c;
   color: #f3f2ee;
   border: none;
@@ -137,15 +138,22 @@ ul.wp-block-woocommerce-product-template{
   transition: box-shadow 0.3s ease;
 }
 
-
-.team-query-loop ul{
+.team-query-loop ul {
   gap: 1rem 0;
 }
 
+
 @media (min-width: 48em){
   .team-query-loop ul{
+
     gap: 2.5rem 1.5rem;
   }
+}
+
+/* Blog page styling */
+
+.blog .wp-block-post-excerpt__more-text a {
+  font-size: 1.3rem;
 }
 
 /* Footer nav Styling */
@@ -153,7 +161,6 @@ ul.wp-block-woocommerce-product-template{
   display: grid;
   grid-template-columns: repeat(2, 150px);
 }
-
 
 /* Single Service Page Styling */
 .woocommerce-product-gallery__image img {
