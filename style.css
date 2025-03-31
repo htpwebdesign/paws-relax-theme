@@ -164,6 +164,28 @@ ul.wp-block-woocommerce-product-template{
   border-radius: 24px;
 }
 
-.wc-bookings-booking-form .bookable-day{
-  background-color: #747F64;
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a {
+	background-color: #747F64 !important;
+}
+
+
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a:hover {
+	background-color: #86A36C !important;
+}
+
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.ui-datepicker-current-day a {
+	background-color: #CB7A5C !important;  
+} 
+
+#wc-bookings-booking-form .block-picker li a:hover {
+	background-color: #86A36C !important;
+}
+
+#wc-bookings-booking-form .block-picker li a.selected {
+        background: #CB7A5C !important;
+}
+
+.form-field .form-field-wide {
+  position: static !important; /* Ensures it stays static */
+  zoom: 1 !important;          /* Ensures the zoom is applied */
 }
