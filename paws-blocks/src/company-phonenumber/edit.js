@@ -54,7 +54,7 @@ export default function Edit({ attributes, setAttributes }) {
 	const [meta, setMeta] = useEntityProp("postType", "page", "meta", postID);
 
 	// Destructure all our meta data for ease of use
-	const { company_address } = meta;
+	const { company_phonenumber } = meta;
 
 	// Flexible helper for setting a single meta value w/o mutating state
 	const updateMeta = (key, value) => {
@@ -81,7 +81,7 @@ export default function Edit({ attributes, setAttributes }) {
 				<RichText
 					placeholder={__("Enter company phone number here...", "paws-blocks")}
 					tagName="p"
-					value={company_address}
+					value={company_phonenumber}
 					onChange={(nextValue) => updateMeta("company_phonenumber", nextValue)}
 				/>
 			</address>
