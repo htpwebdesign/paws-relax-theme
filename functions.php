@@ -2,23 +2,23 @@
 function paws_enqueues()
 {
 
-	// Load normalize.css
-	wp_enqueue_style(
-		'paw-normalize',
-		get_theme_file_uri('/assets/css/normalize.css'),
-		array(),
-		'8.0.1'
-	);
+    // Load normalize.css
+    wp_enqueue_style(
+        'paw-normalize',
+        get_theme_file_uri('/assets/css/normalize.css'),
+        array(),
+        '8.0.1'
+    );
 
-	// Load style.css on the front-end
-	// Parameters: Unique handle, Source, Dependencies, Version number, Media
-	wp_enqueue_style(
-		'paw-style',
-		get_stylesheet_uri(),
-		array(),
-		wp_get_theme()->get('Version'),
-		'all'
-	);
+    // Load style.css on the front-end
+    // Parameters: Unique handle, Source, Dependencies, Version number, Media
+    wp_enqueue_style(
+        'paw-style',
+        get_stylesheet_uri(),
+        array(),
+        wp_get_theme()->get('Version'),
+        'all'
+    );
 
     // Load the custom JavaScript file
     wp_enqueue_script(
@@ -37,7 +37,6 @@ function paws_enqueues()
             'ajaxurl' => admin_url('admin-ajax.php') // Add the admin AJAX URL
         )
     );
-
 }
 
 add_action('wp_enqueue_scripts', 'paws_enqueues');
@@ -73,7 +72,8 @@ require get_theme_file_path() . '/paws-blocks/paws-blocks.php';
 
 // Custom ACF blocks
 add_action('acf/init', 'register_acf_blocks');
-function register_acf_blocks() {
+function register_acf_blocks()
+{
     // Work Title Block
     acf_register_block_type(array(
         'name'              => 'work-title-block',
@@ -110,13 +110,14 @@ function register_acf_blocks() {
 add_action('wp_ajax_fetch_team_member_details', 'fetch_team_member_details');
 add_action('wp_ajax_nopriv_fetch_team_member_details', 'fetch_team_member_details');
 
-function fetch_team_member_details() {
+function fetch_team_member_details()
+{
     $post_id = intval($_POST['post_id']); // Sanitize the POST data
     if (!$post_id) {
         wp_send_json_error('Invalid post ID.'); // Return error if ID is missing
         return;
     }
-    
+
     // Fetch ACF fields
     $team_member_name = get_field('name', $post_id);
     $team_member_title = get_field('title', $post_id);
@@ -126,7 +127,7 @@ function fetch_team_member_details() {
 
     // Prepare HTML output
     ob_start();
-    ?>
+?>
     <div class="team-member-details">
         <h2><?php echo esc_html($team_member_name); ?></h2>
         <p><strong>Title:</strong> <?php echo esc_html($team_member_title); ?></p>
@@ -142,7 +143,7 @@ function fetch_team_member_details() {
             <p>Email not available.</p>
         <?php endif; ?>
     </div>
-    <?php
+<?php
     $html = ob_get_clean();
     wp_send_json_success($html); // Send back the HTML as a response
 }
@@ -150,7 +151,8 @@ function fetch_team_member_details() {
 
 // Teams Page custom link re-direct to Services Page
 add_filter('term_link', 'custom_taxonomy_link', 10, 3);
-function custom_taxonomy_link($url, $term, $taxonomy) {
+function custom_taxonomy_link($url, $term, $taxonomy)
+{
     if ($taxonomy === 'paws-specialty-types') {
         $url = site_url('/services/');
     }
@@ -161,13 +163,34 @@ function custom_taxonomy_link($url, $term, $taxonomy) {
 
 
 // Google map ACF
-function my_acf_init() {
+function my_acf_init()
+{
     acf_update_setting('google_api_key', 'AIzaSyBa9euB1dlKXPfiGp28_9jtTF2OXWDglfI');
 }
 add_action('acf/init', 'my_acf_init');
 
 // Get a Icon from font-awesome
-function load_font_awesome() {
+function load_font_awesome()
+{
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 }
 add_action('wp_enqueue_scripts', 'load_font_awesome');
+
+// Custom Login
+function custom_login_logo_url()
+{
+    return home_url();
+}
+add_filter('login_headerurl', 'custom_login_logo_url');
+
+function custom_login_logo_title()
+{
+    return 'Back to ' . get_bloginfo('name');
+}
+add_filter('login_headertext', 'custom_login_logo_title');
+
+function custom_login_styles()
+{
+    wp_enqueue_style('custom-login', get_stylesheet_directory_uri() . '/custom-login.css');
+}
+add_action('login_enqueue_scripts', 'custom_login_styles');
