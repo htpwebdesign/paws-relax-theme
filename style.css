@@ -189,10 +189,5 @@ ul.wp-block-woocommerce-product-template {
 }
 
 #wc-bookings-booking-form .block-picker li a.selected {
-        background: #CB7A5C !important;
-}
-
-.form-field .form-field-wide {
-  position: static !important; /* Ensures it stays static */
-  zoom: 1 !important;          /* Ensures the zoom is applied */
+  background: #CB7A5C !important;
 }
