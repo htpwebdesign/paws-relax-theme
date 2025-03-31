@@ -150,6 +150,12 @@ ul.wp-block-woocommerce-product-template {
   }
 }
 
+/* Blog page styling */
+
+.blog .wp-block-post-excerpt__more-text a {
+  font-size: 1.3rem;
+}
+
 /* Footer nav Styling */
 .footer-nav {
   display: grid;
@@ -168,4 +174,3 @@ ul.wp-block-woocommerce-product-template {
 .wc-bookings-booking-form .bookable-day{
   background-color: #747F64;
 }
-
