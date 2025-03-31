@@ -34,7 +34,6 @@ return array(
 		),
 		'textdomain' => 'paws-blocks',
 		'editorScript' => 'file:./index.js',
-		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
 		'render' => 'file:./render.php'
 	),
@@ -107,7 +106,6 @@ return array(
 		),
 		'textdomain' => 'paws-blocks',
 		'editorScript' => 'file:./index.js',
-		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
 		'render' => 'file:./render.php',
 		'viewScript' => 'file:./view.js'
