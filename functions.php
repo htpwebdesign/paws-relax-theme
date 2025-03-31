@@ -20,7 +20,16 @@ function paws_enqueues()
 		'all'
 	);
 
-    // Load the custom JavaScript file
+    wp_enqueue_script(
+        'single-product-button',
+        get_template_directory_uri() . '/assets/js/single-product-button.js',
+        array(), // No dependencies
+        null, // No versioning
+        false // Load in the footer
+    );
+    
+
+    // Team Modal JavaScript file
     wp_enqueue_script(
         'team-details-modal',
         get_template_directory_uri() . '/assets/js/team-details-modal.js',
@@ -29,7 +38,7 @@ function paws_enqueues()
         false // Load in the footer
     );
 
-    // Localize the script with the AJAX URL
+    // AJAX URL for team details
     wp_localize_script(
         'team-details-modal',
         'myAjax',
