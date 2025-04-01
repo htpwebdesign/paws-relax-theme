@@ -205,3 +205,36 @@ function custom_login_styles()
 }
 add_action('login_enqueue_scripts', 'custom_login_styles');
 
+
+// Customizing admin menu for shop manager
+function custom_menu_order_for_shop_manager($menu_ord) {
+    if (!is_admin()) return $menu_ord;
+
+    if (current_user_can('shop_manager')) {
+        return array(
+            'index.php',                 //dashboard
+            'woocommerce',               // WooCommerce
+            'edit.php?post_type=product',// product
+            'edit.php?post_type=shop_order', // oders
+            'upload.php',                // media
+            'edit.php?post_type=page',   // pages
+            'edit.php',                  // posts
+            'separator1',                
+            'users.php',                 // users
+            'options-general.php'        // settings
+        );
+    }
+
+    return $menu_ord;
+}
+add_filter('custom_menu_order', '__return_true');
+add_filter('menu_order', 'custom_menu_order_for_shop_manager');
+
+function customize_admin_menu_for_shop_manager() {
+    if (current_user_can('shop_manager')) {
+        remove_menu_page('themes.php');  
+        remove_menu_page('plugins.php');  
+        remove_menu_page('tools.php');  
+    }
+}
+add_action('admin_menu', 'customize_admin_menu_for_shop_manager');
