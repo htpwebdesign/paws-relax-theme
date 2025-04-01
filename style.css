@@ -32,12 +32,10 @@ Update URI: false
   padding: 16px;
 }
 
-
 @media (min-width: 30em) {
-    .custom-template-faqs .wp-block-post-template {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
-
+  .custom-template-faqs .wp-block-post-template {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
 }
 
 /* Services Page Styling */
@@ -155,10 +153,8 @@ Update URI: false
   gap: 1rem 0;
 }
 
-
-@media (min-width: 48em){
-  .team-query-loop ul{
-
+@media (min-width: 48em) {
+  .team-query-loop ul {
     gap: 2.5rem 1.5rem;
   }
 }
@@ -180,40 +176,50 @@ Update URI: false
   border-radius: 24px;
 }
 
-.wc-bookings-booking-form{
+.wc-bookings-booking-form {
   border-radius: 24px;
 }
 
 /* Bookable dates */
-#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a {
-	background-color: #747F64 !important;
+#wc-bookings-booking-form
+  .wc-bookings-date-picker
+  .ui-datepicker
+  td.bookable
+  a {
+  background-color: #747f64 !important;
 }
 
-
 /* Bookable dates hover */
-#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a:hover {
-	background-color: #86A36C !important;
+#wc-bookings-booking-form
+  .wc-bookings-date-picker
+  .ui-datepicker
+  td.bookable
+  a:hover {
+  background-color: #86a36c !important;
 }
 
 /* Selected date */
-#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.ui-datepicker-current-day a {
-	background-color: #CB7A5C !important;  
-} 
+#wc-bookings-booking-form
+  .wc-bookings-date-picker
+  .ui-datepicker
+  td.ui-datepicker-current-day
+  a {
+  background-color: #cb7a5c !important;
+}
 
 /* Bookable times */
 #wc-bookings-booking-form .block-picker li a:hover {
-	background-color: #86A36C !important;
+  background-color: #86a36c !important;
 }
 
 /* Bookable times selected */
 #wc-bookings-booking-form .block-picker li a.selected {
-  background: #CB7A5C !important;
+  background: #cb7a5c !important;
 }
-
 
 /* Booking button */
 .wc-bookings-booking-form-button.single_add_to_cart_button {
-  background: #86A36C;
+  background: #86a36c;
   color: black;
   padding: 16px;
   border-radius: 12px;
@@ -222,7 +228,7 @@ Update URI: false
 }
 
 .wc-bookings-booking-form-button.single_add_to_cart_button:hover {
-  background: #CB7A5C;
+  background: #cb7a5c;
   color: #f3f2ee;
 }
 
@@ -234,12 +240,14 @@ Update URI: false
 }
 
 
+
 .team-member-details h1{
+
   font-size: clamp(2.25rem, 5vw, 4rem);
   margin: 0 0 5px;
 }
 
-.team-member-details h2{
+.team-member-details h2 {
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 600;
 }
@@ -249,7 +257,7 @@ Update URI: false
   margin-bottom: 0;
 }
 
-.team-row{
+.team-row {
   display: flex;
   justify-content: start;
   gap: 1rem;
@@ -261,42 +269,55 @@ Update URI: false
   height: auto;
 }
 
+
 @media (min-width: 48em){
   .team-member-image{
     max-width: 30%;
  }
 }
 
-.team-member-image img{
+.team-member-image img {
   border-radius: 12px;
   width: 100%;
   height: auto;
 }
 
-.team-details{
+.team-details {
   width: fit-content;
   height: auto;
 }
+
 
 @media (min-width: 48em){
   .team-details{
     max-width: 65%;
+
   }
 }
 
-.team-details p{
+.team-details p {
   width: fit-content;
   height: auto;
 }
 
-.team-title{
+.team-title {
   margin-top: 0;
 }
 
-.team-availability, .team-email{
+.team-availability,
+.team-email {
   font-weight: 600;
 }
 
+
+/* Hamburger  Text Style */
+@media (max-width: 37.5em) {
+  li .wp-block-navigation-item__content {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+}
+/* Team Member */
 .team-member-details ul{
   list-style: none;
   padding: 0;
@@ -335,3 +356,4 @@ Update URI: false
   gap: 10px;
   flex-wrap: wrap;
 }
+
