@@ -7,12 +7,11 @@
 	"category": "text",
 	"icon": "email",
 	"description": "Output the company email with an optional icon.",
-	"example": {
-	},
+	"example": {},
 	"supports": {
 		"html": false,
 		"spacing": {
-			"margin": true, 
+			"margin": true,
 			"padding": true,
 			"blockGap": true
 		},
@@ -20,6 +19,9 @@
 			"fontSize": true,
 			"lineHeight": true,
 			"textAlign": true
+		},
+		"color": {
+			"textColor": true
 		}
 	},
 	"attributes": {

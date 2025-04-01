@@ -27,7 +27,7 @@ function paws_enqueues()
         null, // No versioning
         false // Load in the footer
     );
-    
+
 
     // Team Modal JavaScript file
     wp_enqueue_script(
@@ -180,7 +180,7 @@ function fetch_team_member_details()
 
     // Prepare HTML output
     ob_start();
-    ?>
+?>
     <div class="team-member-details">
         <h1>Meet <?php echo esc_html($team_member_name); ?></h1>
 
@@ -214,7 +214,7 @@ function fetch_team_member_details()
         <?php endif; ?>
 
     </div>
-    <?php
+<?php
     $html = ob_get_clean();
     wp_send_json_success($html); // Send back the HTML as a response
 }
@@ -269,19 +269,20 @@ add_action('login_enqueue_scripts', 'custom_login_styles');
 
 
 // Customizing admin menu for shop manager
-function custom_menu_order_for_shop_manager($menu_ord) {
+function custom_menu_order_for_shop_manager($menu_ord)
+{
     if (!is_admin()) return $menu_ord;
 
     if (current_user_can('shop_manager')) {
         return array(
             'index.php',                 //dashboard
             'woocommerce',               // WooCommerce
-            'edit.php?post_type=product',// product
+            'edit.php?post_type=product', // product
             'edit.php?post_type=shop_order', // oders
             'upload.php',                // media
             'edit.php?post_type=page',   // pages
             'edit.php',                  // posts
-            'separator1',                
+            'separator1',
             'users.php',                 // users
             'options-general.php'        // settings
         );
@@ -292,11 +293,45 @@ function custom_menu_order_for_shop_manager($menu_ord) {
 add_filter('custom_menu_order', '__return_true');
 add_filter('menu_order', 'custom_menu_order_for_shop_manager');
 
-function customize_admin_menu_for_shop_manager() {
+function customize_admin_menu_for_shop_manager()
+{
     if (current_user_can('shop_manager')) {
-        remove_menu_page('themes.php');  
-        remove_menu_page('plugins.php');  
-        remove_menu_page('tools.php');  
+        remove_menu_page('themes.php');
+        remove_menu_page('plugins.php');
+        remove_menu_page('tools.php');
     }
 }
 add_action('admin_menu', 'customize_admin_menu_for_shop_manager');
+
+/**
+ * Enqueue AOS (Animate On Scroll) library
+ */
+function paws_enqueue_aos()
+{
+    // Enqueue AOS CSS
+    wp_enqueue_style(
+        'aos-css',
+        'https://unpkg.com/aos@2.3.1/dist/aos.css',
+        array(),
+        '2.3.1'
+    );
+
+    // Enqueue AOS JS
+    wp_enqueue_script(
+        'aos-js',
+        'https://unpkg.com/aos@2.3.1/dist/aos.js',
+        array(),
+        '2.3.1',
+        true
+    );
+
+    // Enqueue AOS initialization
+    wp_enqueue_script(
+        'aos-init',
+        get_theme_file_uri('/assets/js/aos-init.js'),
+        array('aos-js'),
+        '1.0.0',
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'paws_enqueue_aos');
