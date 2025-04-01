@@ -86,6 +86,23 @@ ul.wp-block-woocommerce-product-template {
   border-top-right-radius: 24px;
 }
 
+/* testimonials */
+.wp-block-pullquote {
+  height: 20rem;
+  border: 2px solid black;
+  border-radius: 24px;
+  padding: 1rem;
+}
+
+.wp-block-pullquote blockquote {
+  display: flex;
+  flex-direction: column;
+}
+
+.wp-block-pullquote blockquote p {
+  height: 13rem;
+}
+
 .wp-block-pullquote p::before {
   content: "\f10d";
   font-family: "Font Awesome 6 Free";
@@ -96,6 +113,7 @@ ul.wp-block-woocommerce-product-template {
   display: block;
   text-align: left;
 }
+
 
 .wp-block-pullquote cite::before {
   content: "\f007";
