@@ -23,7 +23,8 @@ return array(
 			'typography' => array(
 				'fontSize' => true,
 				'lineHeight' => true,
-				'textAlign' => true
+				'textAlign' => true,
+				'color' => true
 			)
 		),
 		'attributes' => array(
@@ -34,7 +35,6 @@ return array(
 		),
 		'textdomain' => 'paws-blocks',
 		'editorScript' => 'file:./index.js',
-		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
 		'render' => 'file:./render.php'
 	),
@@ -107,7 +107,6 @@ return array(
 		),
 		'textdomain' => 'paws-blocks',
 		'editorScript' => 'file:./index.js',
-		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
 		'render' => 'file:./render.php',
 		'viewScript' => 'file:./view.js'
