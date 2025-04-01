@@ -18,8 +18,10 @@
     "typography": {
       "fontSize": true,
       "lineHeight": true,
-      "textAlign": true,
-      "color": true
+      "textAlign": true
+    },
+    "color": {
+      "textColor": true
     }
   },
   "attributes": {
