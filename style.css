@@ -52,10 +52,6 @@ Update URI: false
   padding: 2px 4px;
 }
 
-ul.wp-block-woocommerce-product-template {
-  padding: 1rem;
-}
-
 .wp-block-woocommerce-product-template li {
   border: solid 3px #5c757a;
   border-radius: 24px;
