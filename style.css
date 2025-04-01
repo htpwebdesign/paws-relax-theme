@@ -32,12 +32,10 @@ Update URI: false
   padding: 16px;
 }
 
-
 @media (min-width: 30em) {
-    .custom-template-faqs .wp-block-post-template {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
-
+  .custom-template-faqs .wp-block-post-template {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
 }
 
 /* Services Page Styling */
@@ -50,10 +48,6 @@ Update URI: false
   border-radius: 4px;
   outline: none;
   padding: 2px 4px;
-}
-
-ul.wp-block-woocommerce-product-template {
-  padding: 1rem;
 }
 
 .wp-block-woocommerce-product-template li {
@@ -84,6 +78,23 @@ ul.wp-block-woocommerce-product-template {
 .woocommerce ul.products li.product img {
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
+}
+
+/* testimonials */
+.home .wp-block-pullquote {
+  min-height: 20rem;
+  border: 2px solid black;
+  border-radius: 24px;
+  padding: 1rem;
+}
+
+.home .wp-block-pullquote blockquote {
+  display: flex;
+  flex-direction: column;
+}
+
+.home .wp-block-pullquote blockquote p {
+  height: 13rem;
 }
 
 .wp-block-pullquote p::before {
@@ -123,7 +134,7 @@ ul.wp-block-woocommerce-product-template {
   font-size: 1.25rem;
 }
 
-.more-info-button {
+.more-info-button , .availability-container a{
   background-color: #cb7a5c;
   color: #f3f2ee;
   border: none;
@@ -142,10 +153,8 @@ ul.wp-block-woocommerce-product-template {
   gap: 1rem 0;
 }
 
-
-@media (min-width: 48em){
-  .team-query-loop ul{
-
+@media (min-width: 48em) {
+  .team-query-loop ul {
     gap: 2.5rem 1.5rem;
   }
 }
@@ -167,40 +176,50 @@ ul.wp-block-woocommerce-product-template {
   border-radius: 24px;
 }
 
-.wc-bookings-booking-form{
+.wc-bookings-booking-form {
   border-radius: 24px;
 }
 
 /* Bookable dates */
-#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a {
-	background-color: #747F64 !important;
+#wc-bookings-booking-form
+  .wc-bookings-date-picker
+  .ui-datepicker
+  td.bookable
+  a {
+  background-color: #747f64 !important;
 }
 
-
 /* Bookable dates hover */
-#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a:hover {
-	background-color: #86A36C !important;
+#wc-bookings-booking-form
+  .wc-bookings-date-picker
+  .ui-datepicker
+  td.bookable
+  a:hover {
+  background-color: #86a36c !important;
 }
 
 /* Selected date */
-#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.ui-datepicker-current-day a {
-	background-color: #CB7A5C !important;  
-} 
+#wc-bookings-booking-form
+  .wc-bookings-date-picker
+  .ui-datepicker
+  td.ui-datepicker-current-day
+  a {
+  background-color: #cb7a5c !important;
+}
 
 /* Bookable times */
 #wc-bookings-booking-form .block-picker li a:hover {
-	background-color: #86A36C !important;
+  background-color: #86a36c !important;
 }
 
 /* Bookable times selected */
 #wc-bookings-booking-form .block-picker li a.selected {
-  background: #CB7A5C !important;
+  background: #cb7a5c !important;
 }
-
 
 /* Booking button */
 .wc-bookings-booking-form-button.single_add_to_cart_button {
-  background: #86A36C;
+  background: #86a36c;
   color: black;
   padding: 16px;
   border-radius: 12px;
@@ -209,24 +228,36 @@ ul.wp-block-woocommerce-product-template {
 }
 
 .wc-bookings-booking-form-button.single_add_to_cart_button:hover {
-  background: #CB7A5C;
+  background: #cb7a5c;
   color: #f3f2ee;
 }
 
 /* Team Modal Styling */
-.team-member-details{
+.team-member-details {
+  max-height: 70vh; 
   overflow-y: auto;
+  padding: 20px;
 }
+
+
 
 .team-member-details h1{
+
   font-size: clamp(2.25rem, 5vw, 4rem);
+  margin: 0 0 5px;
 }
 
-.team-member-details h2{
+.team-member-details h2 {
   font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 600;
 }
 
-.team-row{
+.team-member-details h3{
+  font-size: clamp(1rem, 1vw, 1.15rem);
+  margin-bottom: 0;
+}
+
+.team-row {
   display: flex;
   justify-content: start;
   gap: 1rem;
@@ -238,38 +269,91 @@ ul.wp-block-woocommerce-product-template {
   height: auto;
 }
 
-@media (min-width: 30em){
+
+@media (min-width: 48em){
   .team-member-image{
-    max-width: 48%;
+    max-width: 30%;
  }
 }
 
-.team-member-image img{
+.team-member-image img {
   border-radius: 12px;
   width: 100%;
   height: auto;
 }
 
-.team-details{
+.team-details {
   width: fit-content;
   height: auto;
 }
 
-@media (min-width: 30em){
+
+@media (min-width: 48em){
   .team-details{
+    max-width: 65%;
+
+  }
+}
+
+.team-details p {
+  width: fit-content;
+  height: auto;
+}
+
+.team-title {
+  margin-top: 0;
+}
+
+.team-availability,
+.team-email {
+  font-weight: 600;
+}
+
+
+/* Hamburger  Text Style */
+@media (max-width: 37.5em) {
+  li .wp-block-navigation-item__content {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+}
+/* Team Member */
+.team-member-details ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.team-member-details li{
+  margin: 0;
+  padding: 0 5px 5px;
+}
+
+@media (min-width: 48em){
+  .team-member-details li{
     max-width: 48%;
   }
 }
 
-.team-details p{
+.team-member-details blockquote{
+  margin: 0;
+}
+
+.testimonial{
   width: fit-content;
   height: auto;
 }
 
-.team-title{
-  margin-top: 0;
+.team-member-testimonials p{
+  font-size: 0.875rem;
 }
 
-.team-availability, .team-email{
-  font-weight: 600;
+.availability-container{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
+
