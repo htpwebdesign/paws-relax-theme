@@ -140,7 +140,6 @@ function fetch_team_member_details()
         $featured_image = get_the_post_thumbnail($post_id, 'medium'); // Adjust the size ('thumbnail', 'medium', 'full', etc.)
     }
 
-
     // Fetch Testimonials (from taxonomy linked to team member name)
     $args = array(
         'post_type'      => 'paws-testimonial', // Your testimonial CPT
@@ -164,12 +163,10 @@ function fetch_team_member_details()
 
             // Render testimonial content
             $testimonial_content = do_blocks(get_the_content()); // Render blocks in the testimonial content
-            $testimonial_author = get_the_title(); // Author or title of testimonial
 
             $testimonials_html .= '<li>
                 <blockquote>
                     <p>' . $testimonial_content . '</p>
-                    <cite>- ' . esc_html($testimonial_author) . '</cite>
                 </blockquote>
             </li>';
         }
@@ -196,7 +193,11 @@ function fetch_team_member_details()
                     <p><?php echo esc_html($team_member_bio); ?></p>
                 <?php endif; ?>
                 <?php if (!empty($team_member_availability)): ?>
-                    <p><span class="team-availability">Availability: </span><?php echo esc_html($team_member_availability); ?></p>
+                    <div class="availability-container">
+                        <p><span class="team-availability">Availability: </span><?php echo esc_html($team_member_availability); ?></p>
+                        <a href=<?php echo site_url('/services/'); ?>>Book Now</a>
+
+                    </div>
                 <?php endif; ?>
                 <?php if (!empty($team_member_email)): ?>
                     <p><span class="team-email">Email: </span><a href="mailto:<?php echo esc_attr($team_member_email); ?>"><?php echo esc_html($team_member_email); ?></a></p>
