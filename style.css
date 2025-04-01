@@ -212,3 +212,64 @@ ul.wp-block-woocommerce-product-template {
   background: #CB7A5C;
   color: #f3f2ee;
 }
+
+/* Team Modal Styling */
+.team-member-details{
+  overflow-y: auto;
+}
+
+.team-member-details h1{
+  font-size: clamp(2.25rem, 5vw, 4rem);
+}
+
+.team-member-details h2{
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.team-row{
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.team-member-image {
+  width: fit-content;
+  height: auto;
+}
+
+@media (min-width: 30em){
+  .team-member-image{
+    max-width: 48%;
+ }
+}
+
+.team-member-image img{
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+}
+
+.team-details{
+  width: fit-content;
+  height: auto;
+}
+
+@media (min-width: 30em){
+  .team-details{
+    max-width: 48%;
+  }
+}
+
+.team-details p{
+  width: fit-content;
+  height: auto;
+}
+
+.team-title{
+  margin-top: 0;
+}
+
+.team-availability, .team-email{
+  font-weight: 600;
+}

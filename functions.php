@@ -127,32 +127,94 @@ function fetch_team_member_details()
         return;
     }
 
-    // Fetch ACF fields
+    // Fetch ACF fields for team member details
     $team_member_name = get_field('name', $post_id);
     $team_member_title = get_field('title', $post_id);
     $team_member_bio = get_field('bio', $post_id);
     $team_member_availability = get_field('availability', $post_id);
     $team_member_email = get_field('email', $post_id);
 
+    // Fetch the Featured Image (if available)
+    $featured_image = '';
+    if (has_post_thumbnail($post_id)) {
+        $featured_image = get_the_post_thumbnail($post_id, 'medium'); // Adjust the size ('thumbnail', 'medium', 'full', etc.)
+    }
+
+
+    // Fetch Testimonials (from taxonomy linked to team member name)
+    $args = array(
+        'post_type'      => 'paws-testimonial', // Your testimonial CPT
+        'posts_per_page' => -1,
+        'tax_query'      => array(
+            array(
+                'taxonomy' => 'paws-testimonial-types', // Your taxonomy for testimonial types
+                'field'    => 'name', // Match taxonomy terms by name
+                'terms'    => $team_member_name, // Use the team member's name as the term
+            ),
+        ),
+    );
+
+    $testimonial_query = new WP_Query($args); // Query testimonials
+
+    $testimonials_html = '';
+    if ($testimonial_query->have_posts()) {
+        $testimonials_html = '<ul>'; // Start a list for testimonials
+        while ($testimonial_query->have_posts()) {
+            $testimonial_query->the_post();
+
+            // Render testimonial content
+            $testimonial_content = do_blocks(get_the_content()); // Render blocks in the testimonial content
+            $testimonial_author = get_the_title(); // Author or title of testimonial
+
+            $testimonials_html .= '<li>
+                <blockquote>
+                    <p>' . $testimonial_content . '</p>
+                    <cite>- ' . esc_html($testimonial_author) . '</cite>
+                </blockquote>
+            </li>';
+        }
+        $testimonials_html .= '</ul>'; // Close the list
+        wp_reset_postdata(); // Reset query
+    }
+
+
     // Prepare HTML output
     ob_start();
-?>
+    ?>
     <div class="team-member-details">
-        <h2>Meet <?php echo esc_html($team_member_name); ?></h2>
-        <p><strong>Title:</strong> <?php echo esc_html($team_member_title); ?></p>
-        <?php if (!empty($team_member_bio)): ?>
-            <p><?php echo esc_html($team_member_bio); ?></p>
+        <h1>Meet <?php echo esc_html($team_member_name); ?></h1>
+
+        <div class="team-row">
+            <?php if (!empty($featured_image)): ?>
+                <div class="team-member-image">
+                    <?php echo $featured_image; ?>
+                </div>
+            <?php endif; ?>
+            <div class="team-details">
+                <h2 class="team-title"><?php echo esc_html($team_member_title); ?></h2>
+                <?php if (!empty($team_member_bio)): ?>
+                    <p><?php echo esc_html($team_member_bio); ?></p>
+                <?php endif; ?>
+                <?php if (!empty($team_member_availability)): ?>
+                    <p><span class="team-availability">Availability: </span><?php echo esc_html($team_member_availability); ?></p>
+                <?php endif; ?>
+                <?php if (!empty($team_member_email)): ?>
+                    <p><span class="team-email">Email: </span><a href="mailto:<?php echo esc_attr($team_member_email); ?>"><?php echo esc_html($team_member_email); ?></a></p>
+                <?php else: ?>
+                    <p>Email not available.</p>
+                <?php endif; ?>
+            </div>
+        </div>
+
+        <?php if (!empty($testimonials_html)): ?>
+            <div class="team-member-testimonials">
+                <h3>What People Say About <?php echo esc_html($team_member_name); ?>:</h3>
+                <?php echo $testimonials_html; ?>
+            </div>
         <?php endif; ?>
-        <?php if (!empty($team_member_availability)): ?>
-            <p>Availability: <?php echo esc_html($team_member_availability); ?></p>
-        <?php endif; ?>
-        <?php if (!empty($team_member_email)): ?>
-            <p><a href="mailto:<?php echo esc_attr($team_member_email); ?>"><?php echo esc_html($team_member_email); ?></a></p>
-        <?php else: ?>
-            <p>Email not available.</p>
-        <?php endif; ?>
+
     </div>
-<?php
+    <?php
     $html = ob_get_clean();
     wp_send_json_success($html); // Send back the HTML as a response
 }
