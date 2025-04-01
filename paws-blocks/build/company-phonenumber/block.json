@@ -19,6 +19,9 @@
       "fontSize": true,
       "lineHeight": true,
       "textAlign": true
+    },
+    "color": {
+      "textColor": true
     }
   },
   "attributes": {

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "paws-blocks/aos-block",
+  "version": "0.1.0",
+  "title": "Animate On Scroll",
+  "category": "design",
+  "icon": "slides",
+  "description": "Wrap blocks with animation effects when scrolled into view",
+  "supports": {
+    "html": false,
+    "anchor": true
+  },
+  "attributes": {
+    "animation": {
+      "type": "string",
+      "default": "fade-up"
+    }
+  },
+  "textdomain": "paws-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
