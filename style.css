@@ -50,10 +50,6 @@ Update URI: false
   padding: 2px 4px;
 }
 
-ul.wp-block-woocommerce-product-template {
-  padding: 1rem;
-}
-
 .wp-block-woocommerce-product-template li {
   border: solid 3px #5c757a;
   border-radius: 24px;
@@ -82,6 +78,23 @@ ul.wp-block-woocommerce-product-template {
 .woocommerce ul.products li.product img {
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
+}
+
+/* testimonials */
+.home .wp-block-pullquote {
+  min-height: 20rem;
+  border: 2px solid black;
+  border-radius: 24px;
+  padding: 1rem;
+}
+
+.home .wp-block-pullquote blockquote {
+  display: flex;
+  flex-direction: column;
+}
+
+.home .wp-block-pullquote blockquote p {
+  height: 13rem;
 }
 
 .wp-block-pullquote p::before {
@@ -121,7 +134,7 @@ ul.wp-block-woocommerce-product-template {
   font-size: 1.25rem;
 }
 
-.more-info-button {
+.more-info-button , .availability-container a{
   background-color: #cb7a5c;
   color: #f3f2ee;
   border: none;
@@ -221,15 +234,27 @@ ul.wp-block-woocommerce-product-template {
 
 /* Team Modal Styling */
 .team-member-details {
+  max-height: 70vh; 
   overflow-y: auto;
+  padding: 20px;
 }
 
-.team-member-details h1 {
+
+
+.team-member-details h1{
+
   font-size: clamp(2.25rem, 5vw, 4rem);
+  margin: 0 0 5px;
 }
 
 .team-member-details h2 {
   font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 600;
+}
+
+.team-member-details h3{
+  font-size: clamp(1rem, 1vw, 1.15rem);
+  margin-bottom: 0;
 }
 
 .team-row {
@@ -244,10 +269,11 @@ ul.wp-block-woocommerce-product-template {
   height: auto;
 }
 
-@media (min-width: 30em) {
-  .team-member-image {
-    max-width: 48%;
-  }
+
+@media (min-width: 48em){
+  .team-member-image{
+    max-width: 30%;
+ }
 }
 
 .team-member-image img {
@@ -261,9 +287,11 @@ ul.wp-block-woocommerce-product-template {
   height: auto;
 }
 
-@media (min-width: 30em) {
-  .team-details {
-    max-width: 48%;
+
+@media (min-width: 48em){
+  .team-details{
+    max-width: 65%;
+
   }
 }
 
@@ -281,6 +309,7 @@ ul.wp-block-woocommerce-product-template {
   font-weight: 600;
 }
 
+
 /* Hamburger  Text Style */
 @media (max-width: 37.5em) {
   li .wp-block-navigation-item__content {
@@ -288,3 +317,43 @@ ul.wp-block-woocommerce-product-template {
     padding: 0.5rem;
   }
 }
+/* Team Member */
+.team-member-details ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.team-member-details li{
+  margin: 0;
+  padding: 0 5px 5px;
+}
+
+@media (min-width: 48em){
+  .team-member-details li{
+    max-width: 48%;
+  }
+}
+
+.team-member-details blockquote{
+  margin: 0;
+}
+
+.testimonial{
+  width: fit-content;
+  height: auto;
+}
+
+.team-member-testimonials p{
+  font-size: 0.875rem;
+}
+
+.availability-container{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
