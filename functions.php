@@ -138,7 +138,7 @@ function fetch_team_member_details()
     ob_start();
 ?>
     <div class="team-member-details">
-        <h2><?php echo esc_html($team_member_name); ?></h2>
+        <h2>Meet <?php echo esc_html($team_member_name); ?></h2>
         <p><strong>Title:</strong> <?php echo esc_html($team_member_title); ?></p>
         <?php if (!empty($team_member_bio)): ?>
             <p><?php echo esc_html($team_member_bio); ?></p>

@@ -74,7 +74,7 @@ function showModal(content) {
     closeButton.textContent = "Close";
     closeButton.style.cssText = `
         margin-top: 10px; 
-        background: #ff0000; 
+        background: #CB7A5C; 
         color: #fff; 
         border: none; 
         padding: 10px 20px; 
