@@ -248,7 +248,7 @@ ul.wp-block-woocommerce-product-template {
   height: auto;
 }
 
-@media (min-width: 30em){
+@media (min-width: 48em){
   .team-member-image{
     max-width: 30%;
  }
@@ -265,7 +265,7 @@ ul.wp-block-woocommerce-product-template {
   height: auto;
 }
 
-@media (min-width: 30em){
+@media (min-width: 48em){
   .team-details{
     max-width: 65%;
   }
