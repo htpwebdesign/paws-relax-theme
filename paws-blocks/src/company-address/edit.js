@@ -79,20 +79,20 @@ export default function Edit({ attributes, setAttributes }) {
 					</svg>
 				)}
 				<RichText
-					placeholder={__("Enter address here...", "paws-blocks")}
+					placeholder={ __("Enter address here...", "paws-blocks")}
 					tagName="p"
 					value={company_address}
 					onChange={(nextValue) => updateMeta("company_address", nextValue)}
 				/>
 			</address>
 			<InspectorControls>
-				<PanelBody title={__("Settings", "paws-blocks")}>
+				<PanelBody title={ __("Settings", "paws-blocks")}>
 					<PanelRow>
 						<ToggleControl
-							label={__("Show SVG Icon", "paws-blocks")}
+							label={ __("Show SVG Icon", "paws-blocks")}
 							checked={svgIcon}
 							onChange={(value) => setAttributes({ svgIcon: value })}
-							help={__(
+							help={ __(
 								"Display an SVG icon next to the address.",
 								"paws-blocks",
 							)}

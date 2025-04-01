@@ -11,4 +11,5 @@
 		</svg>
 	<?php endif; ?>
 	<p><?php echo wp_kses_post(get_post_meta(324, 'company_address', true)); ?></p>
+	
 </address>

@@ -1,0 +1,14 @@
+.wp-block-school-aos-block {
+	padding: 20px;
+	border: 1px dashed #ddd;
+	background-color: rgba(0, 0, 0, 0.02);
+
+	&::before {
+		content: "✨ Animation: " attr(data-aos);
+		display: block;
+		margin-bottom: 10px;
+		font-size: 12px;
+		font-family: monospace;
+		color: #757575;
+	}
+}

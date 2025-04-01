@@ -1,6 +1,30 @@
 <?php
 // This file is generated. Do not modify it manually.
 return array(
+	'aos-block' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'paws-blocks/aos-block',
+		'version' => '0.1.0',
+		'title' => 'Animate On Scroll',
+		'category' => 'design',
+		'icon' => 'slides',
+		'description' => 'Wrap blocks with animation effects when scrolled into view',
+		'supports' => array(
+			'html' => false,
+			'anchor' => true
+		),
+		'attributes' => array(
+			'animation' => array(
+				'type' => 'string',
+				'default' => 'fade-up'
+			)
+		),
+		'textdomain' => 'paws-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css'
+	),
 	'company-address' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
@@ -24,6 +48,9 @@ return array(
 				'fontSize' => true,
 				'lineHeight' => true,
 				'textAlign' => true
+			),
+			'color' => array(
+				'textColor' => true
 			)
 		),
 		'attributes' => array(
@@ -34,7 +61,6 @@ return array(
 		),
 		'textdomain' => 'paws-blocks',
 		'editorScript' => 'file:./index.js',
-		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
 		'render' => 'file:./render.php'
 	),
@@ -61,6 +87,9 @@ return array(
 				'fontSize' => true,
 				'lineHeight' => true,
 				'textAlign' => true
+			),
+			'color' => array(
+				'textColor' => true
 			)
 		),
 		'attributes' => array(
@@ -97,6 +126,9 @@ return array(
 				'fontSize' => true,
 				'lineHeight' => true,
 				'textAlign' => true
+			),
+			'color' => array(
+				'textColor' => true
 			)
 		),
 		'attributes' => array(
@@ -107,7 +139,6 @@ return array(
 		),
 		'textdomain' => 'paws-blocks',
 		'editorScript' => 'file:./index.js',
-		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
 		'render' => 'file:./render.php',
 		'viewScript' => 'file:./view.js'

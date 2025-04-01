@@ -32,82 +32,101 @@ Update URI: false
   padding: 16px;
 }
 
-@media (min-width: 480px) {
+
+@media (min-width: 30em) {
     .custom-template-faqs .wp-block-post-template {
         grid-template-columns: repeat(3, 1fr) !important;
     }
+
 }
 
-
 /* Services Page Styling */
-.services-description{
+.services-description {
   margin-bottom: 4rem;
 }
 
-.orderby{
-  border: solid 2px #5C757A;
+.orderby {
+  border: solid 2px #5c757a;
   border-radius: 4px;
   outline: none;
   padding: 2px 4px;
 }
 
-ul.wp-block-woocommerce-product-template{
+ul.wp-block-woocommerce-product-template {
   padding: 1rem;
 }
 
-.wp-block-woocommerce-product-template li{
-  border: solid 3px #5C757A;
+.wp-block-woocommerce-product-template li {
+  border: solid 3px #5c757a;
   border-radius: 24px;
 }
 
 /* Home Page Styling */
 
 .woocommerce ul.products {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .woocommerce ul.products span {
-    display: none;
+  display: none;
 }
 
 .woocommerce ul.products li.product {
-    border: solid 3px #5C757A;
-    border-radius: 24px;
-    text-align: center;
-    width: 350px;
-    height: 450px;
+  border: solid 3px #5c757a;
+  border-radius: 24px;
+  text-align: center;
+  width: 350px;
+  height: 450px;
 }
 
 .woocommerce ul.products li.product img {
-    border-top-left-radius: 24px;
-    border-top-right-radius: 24px;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+
+/* testimonials */
+.wp-block-pullquote {
+  height: 20rem;
+  border: 2px solid black;
+  border-radius: 24px;
+  padding: 1rem;
+}
+
+.wp-block-pullquote blockquote {
+  display: flex;
+  flex-direction: column;
+}
+
+.wp-block-pullquote blockquote p {
+  height: 13rem;
 }
 
 .wp-block-pullquote p::before {
-    content: "\f10d";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    font-size: 50px;
-    color: #747F64;
-    margin-right: 10px;
-    display: block;
-    text-align: left;
+  content: "\f10d";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 50px;
+  color: #747f64;
+  margin-right: 10px;
+  display: block;
+  text-align: left;
 }
 
+
 .wp-block-pullquote cite::before {
-    content: "\f007";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 800;
-    font-size: 30px;
-    color: #747F64;
-    margin-right: 10px;
-    font-style: normal;
+  content: "\f007";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 800;
+  font-size: 30px;
+  color: #747f64;
+  margin-right: 10px;
+  font-style: normal;
 }
 
 .home .woocommerce ul.products li.product .woocommerce-loop-product__title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 2px;
@@ -118,11 +137,11 @@ ul.wp-block-woocommerce-product-template{
 }
 
 /* Team Page Styling */
-.acf-work-title-block{
+.acf-work-title-block {
   font-size: 1.25rem;
 }
 
-.more-info-button{
+.more-info-button , .availability-container a{
   background-color: #cb7a5c;
   color: #f3f2ee;
   border: none;
@@ -137,19 +156,187 @@ ul.wp-block-woocommerce-product-template{
   transition: box-shadow 0.3s ease;
 }
 
-
-.team-query-loop ul{
+.team-query-loop ul {
   gap: 1rem 0;
 }
 
-@media (min-width: 48rem){
+
+@media (min-width: 48em){
   .team-query-loop ul{
+
     gap: 2.5rem 1.5rem;
   }
+}
+
+/* Blog page styling */
+
+.blog .wp-block-post-excerpt__more-text a {
+  font-size: 1.3rem;
 }
 
 /* Footer nav Styling */
 .footer-nav {
   display: grid;
   grid-template-columns: repeat(2, 150px);
+}
+
+/* Single Service Page Styling */
+.woocommerce-product-gallery__image img {
+  border-radius: 24px;
+}
+
+.wc-bookings-booking-form{
+  border-radius: 24px;
+}
+
+/* Bookable dates */
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a {
+	background-color: #747F64 !important;
+}
+
+
+/* Bookable dates hover */
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a:hover {
+	background-color: #86A36C !important;
+}
+
+/* Selected date */
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.ui-datepicker-current-day a {
+	background-color: #CB7A5C !important;  
+} 
+
+/* Bookable times */
+#wc-bookings-booking-form .block-picker li a:hover {
+	background-color: #86A36C !important;
+}
+
+/* Bookable times selected */
+#wc-bookings-booking-form .block-picker li a.selected {
+  background: #CB7A5C !important;
+}
+
+
+/* Booking button */
+.wc-bookings-booking-form-button.single_add_to_cart_button {
+  background: #86A36C;
+  color: black;
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.wc-bookings-booking-form-button.single_add_to_cart_button:hover {
+  background: #CB7A5C;
+  color: #f3f2ee;
+}
+
+/* Team Modal Styling */
+.team-member-details {
+  max-height: 70vh; 
+  overflow-y: auto;
+  padding: 20px;
+}
+
+
+.team-member-details h1{
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  margin: 0 0 5px;
+}
+
+.team-member-details h2{
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 600;
+}
+
+.team-member-details h3{
+  font-size: clamp(1rem, 1vw, 1.15rem);
+  margin-bottom: 0;
+}
+
+.team-row{
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.team-member-image {
+  width: fit-content;
+  height: auto;
+}
+
+@media (min-width: 48em){
+  .team-member-image{
+    max-width: 30%;
+ }
+}
+
+.team-member-image img{
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+}
+
+.team-details{
+  width: fit-content;
+  height: auto;
+}
+
+@media (min-width: 48em){
+  .team-details{
+    max-width: 65%;
+  }
+}
+
+.team-details p{
+  width: fit-content;
+  height: auto;
+}
+
+.team-title{
+  margin-top: 0;
+}
+
+.team-availability, .team-email{
+  font-weight: 600;
+}
+
+.team-member-details ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.team-member-details li{
+  margin: 0;
+  padding: 0 5px 5px;
+}
+
+@media (min-width: 48em){
+  .team-member-details li{
+    max-width: 48%;
+  }
+}
+
+.team-member-details blockquote{
+  margin: 0;
+}
+
+.testimonial{
+  width: fit-content;
+  height: auto;
+}
+
+.team-member-testimonials p{
+  font-size: 0.875rem;
+}
+
+.availability-container{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
