@@ -87,19 +87,19 @@ ul.wp-block-woocommerce-product-template {
 }
 
 /* testimonials */
-.wp-block-pullquote {
-  height: 20rem;
+.home .wp-block-pullquote {
+  min-height: 20rem;
   border: 2px solid black;
   border-radius: 24px;
   padding: 1rem;
 }
 
-.wp-block-pullquote blockquote {
+.home .wp-block-pullquote blockquote {
   display: flex;
   flex-direction: column;
 }
 
-.wp-block-pullquote blockquote p {
+.home .wp-block-pullquote blockquote p {
   height: 13rem;
 }
 
@@ -113,7 +113,6 @@ ul.wp-block-woocommerce-product-template {
   display: block;
   text-align: left;
 }
-
 
 .wp-block-pullquote cite::before {
   content: "\f007";
