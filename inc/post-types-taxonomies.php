@@ -54,8 +54,9 @@ function paws_relax_register_custom_post_types()
         'hierarchical'            => false,
         'menu_position'           => 5,
         'menu_icon'               => 'dashicons-groups',
-        'supports'                => array('title', 'editor', 'thumbnail'),
+        'supports'                => array('thumbnail'),
     );
+    
     register_post_type('paws-team', $args);
 
     // Testimonials CPT

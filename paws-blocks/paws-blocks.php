@@ -22,3 +22,41 @@ function paws_blocks_paws_blocks_block_init()
 	}
 }
 add_action('init', 'paws_blocks_paws_blocks_block_init');
+
+
+/**
+ * Registers the custom fields for some blocks.
+ *
+ * @see https://developer.wordpress.org/reference/functions/register_post_meta/
+ */
+function paws_register_custom_fields()
+{
+    register_post_meta(
+        'page',
+        'company_email',
+        array(
+            'type' => 'string',
+            'show_in_rest' => true,
+            'single' => true
+        )
+    );
+    register_post_meta(
+        'page',
+        'company_address',
+        array(
+            'type' => 'string',
+            'show_in_rest' => true,
+            'single' => true
+        )
+    );
+	register_post_meta(
+        'page',
+        'company_phonenumber',
+        array(
+            'type' => 'string',
+            'show_in_rest' => true,
+            'single' => true
+        )
+    );
+}
+add_action('init', 'paws_register_custom_fields');

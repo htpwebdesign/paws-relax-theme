@@ -150,6 +150,12 @@ ul.wp-block-woocommerce-product-template {
   }
 }
 
+/* Blog page styling */
+
+.blog .wp-block-post-excerpt__more-text a {
+  font-size: 1.3rem;
+}
+
 /* Footer nav Styling */
 .footer-nav {
   display: grid;
@@ -165,7 +171,105 @@ ul.wp-block-woocommerce-product-template {
   border-radius: 24px;
 }
 
-.wc-bookings-booking-form .bookable-day{
-  background-color: #747F64;
+/* Bookable dates */
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a {
+	background-color: #747F64 !important;
 }
 
+
+/* Bookable dates hover */
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a:hover {
+	background-color: #86A36C !important;
+}
+
+/* Selected date */
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.ui-datepicker-current-day a {
+	background-color: #CB7A5C !important;  
+} 
+
+/* Bookable times */
+#wc-bookings-booking-form .block-picker li a:hover {
+	background-color: #86A36C !important;
+}
+
+/* Bookable times selected */
+#wc-bookings-booking-form .block-picker li a.selected {
+  background: #CB7A5C !important;
+}
+
+
+/* Booking button */
+.wc-bookings-booking-form-button.single_add_to_cart_button {
+  background: #86A36C;
+  color: black;
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.wc-bookings-booking-form-button.single_add_to_cart_button:hover {
+  background: #CB7A5C;
+  color: #f3f2ee;
+}
+
+/* Team Modal Styling */
+.team-member-details{
+  overflow-y: auto;
+}
+
+.team-member-details h1{
+  font-size: clamp(2.25rem, 5vw, 4rem);
+}
+
+.team-member-details h2{
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.team-row{
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.team-member-image {
+  width: fit-content;
+  height: auto;
+}
+
+@media (min-width: 30em){
+  .team-member-image{
+    max-width: 48%;
+ }
+}
+
+.team-member-image img{
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+}
+
+.team-details{
+  width: fit-content;
+  height: auto;
+}
+
+@media (min-width: 30em){
+  .team-details{
+    max-width: 48%;
+  }
+}
+
+.team-details p{
+  width: fit-content;
+  height: auto;
+}
+
+.team-title{
+  margin-top: 0;
+}
+
+.team-availability, .team-email{
+  font-weight: 600;
+}
