@@ -134,7 +134,8 @@ Update URI: false
   font-size: 1.25rem;
 }
 
-.more-info-button , .availability-container a{
+.more-info-button,
+.availability-container a {
   background-color: #cb7a5c;
   color: #f3f2ee;
   border: none;
@@ -162,7 +163,8 @@ Update URI: false
 /* Blog page styling */
 
 .blog .wp-block-post-excerpt__more-text a {
-  font-size: 1.3rem;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 /* Footer nav Styling */
@@ -234,15 +236,12 @@ Update URI: false
 
 /* Team Modal Styling */
 .team-member-details {
-  max-height: 70vh; 
+  max-height: 70vh;
   overflow-y: auto;
   padding: 20px;
 }
 
-
-
-.team-member-details h1{
-
+.team-member-details h1 {
   font-size: clamp(2.25rem, 5vw, 4rem);
   margin: 0 0 5px;
 }
@@ -252,7 +251,7 @@ Update URI: false
   font-weight: 600;
 }
 
-.team-member-details h3{
+.team-member-details h3 {
   font-size: clamp(1rem, 1vw, 1.15rem);
   margin-bottom: 0;
 }
@@ -269,11 +268,10 @@ Update URI: false
   height: auto;
 }
 
-
-@media (min-width: 48em){
-  .team-member-image{
+@media (min-width: 48em) {
+  .team-member-image {
     max-width: 30%;
- }
+  }
 }
 
 .team-member-image img {
@@ -287,11 +285,9 @@ Update URI: false
   height: auto;
 }
 
-
-@media (min-width: 48em){
-  .team-details{
+@media (min-width: 48em) {
+  .team-details {
     max-width: 65%;
-
   }
 }
 
@@ -309,8 +305,8 @@ Update URI: false
   font-weight: 600;
 }
 
-
 /* Hamburger  Text Style */
+
 @media (max-width: 37.5em) {
   li .wp-block-navigation-item__content {
     font-size: 1.5rem;
@@ -318,7 +314,7 @@ Update URI: false
   }
 }
 /* Team Member */
-.team-member-details ul{
+.team-member-details ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -327,33 +323,32 @@ Update URI: false
   gap: 10px;
 }
 
-.team-member-details li{
+.team-member-details li {
   margin: 0;
   padding: 0 5px 5px;
 }
 
-@media (min-width: 48em){
-  .team-member-details li{
+@media (min-width: 48em) {
+  .team-member-details li {
     max-width: 48%;
   }
 }
 
-.team-member-details blockquote{
+.team-member-details blockquote {
   margin: 0;
 }
 
-.testimonial{
+.testimonial {
   width: fit-content;
   height: auto;
 }
 
-.team-member-testimonials p{
+.team-member-testimonials p {
   font-size: 0.875rem;
 }
 
-.availability-container{
+.availability-container {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
-
