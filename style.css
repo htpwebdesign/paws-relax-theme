@@ -163,7 +163,8 @@ Update URI: false
 /* Blog page styling */
 
 .blog .wp-block-post-excerpt__more-text a {
-  font-size: 1.3rem;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 /* Footer nav Styling */
