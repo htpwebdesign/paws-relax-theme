@@ -231,16 +231,6 @@ function custom_taxonomy_link($url, $term, $taxonomy)
     return $url;
 }
 
-
-
-
-// Google map ACF
-function my_acf_init()
-{
-    acf_update_setting('google_api_key', 'AIzaSyBa9euB1dlKXPfiGp28_9jtTF2OXWDglfI');
-}
-add_action('acf/init', 'my_acf_init');
-
 // Get a Icon from font-awesome
 function load_font_awesome()
 {
