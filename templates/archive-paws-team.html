@@ -1,7 +1,7 @@
 <!-- wp:template-part {"slug":"header"} /-->
 
-<!-- wp:group {"metadata":{"name":"Page Wrapper"},"layout":{"type":"constrained","wideSize":"62.5rem"}} -->
-<div class="wp-block-group"><!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontSize":"96px"}}} -->
+<!-- wp:group {"metadata":{"name":"Page Wrapper"},"style":{"spacing":{"padding":{"right":"1rem","left":"1rem"}}},"layout":{"type":"constrained","wideSize":"62.5rem"}} -->
+<div class="wp-block-group" style="padding-right:1rem;padding-left:1rem"><!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontSize":"96px"}}} -->
 <h1 class="wp-block-heading has-text-align-center" style="font-size:96px">Meet our wonderful, dog-loving team!</h1>
 <!-- /wp:heading -->
 
@@ -13,8 +13,8 @@
 
 <!-- wp:query {"queryId":21,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":true},"metadata":{"categories":["posts"],"patternName":"core/query-grid-posts","name":"Grid"},"className":"team-query-loop"} -->
 <div class="wp-block-query team-query-loop"><!-- wp:post-template {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"grid","columnCount":3}} -->
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"16px","right":"16px","bottom":"16px","left":"16px"}}},"layout":{"inherit":false}} -->
-<div class="wp-block-group" style="padding-top:16px;padding-right:16px;padding-bottom:16px;padding-left:16px"><!-- wp:post-featured-image {"aspectRatio":"3/4","style":{"border":{"radius":"20px"}}} /-->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","right":"var:preset|spacing|40","bottom":"1rem","left":"var:preset|spacing|40"}}},"layout":{"inherit":false}} -->
+<div class="wp-block-group" style="padding-top:1rem;padding-right:var(--wp--preset--spacing--40);padding-bottom:1rem;padding-left:var(--wp--preset--spacing--40)"><!-- wp:post-featured-image {"aspectRatio":"3/4","style":{"border":{"radius":"20px"}}} /-->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:post-title {"style":{"typography":{"fontSize":"48px","lineHeight":"1.5"},"spacing":{"padding":{"right":"0px","left":"0px","top":"0","bottom":"0"},"margin":{"right":"0px","left":"0px"}}}} /-->
@@ -24,7 +24,7 @@
 
 <!-- wp:post-terms {"term":"paws-specialty-types","prefix":"Specialties: ","style":{"typography":{"fontSize":"1rem"}}} /-->
 
-<!-- wp:acf/more-info-block {"name":"acf/more-info-block","data":[],"mode":"preview"} /--></div>
+<!-- wp:acf/more-info-block {"name":"acf/more-info-block","mode":"preview"} /--></div>
 <!-- /wp:group -->
 <!-- /wp:post-template --></div>
 <!-- /wp:query --></div>
