@@ -67,7 +67,9 @@
 							"fontStyle": "normal",
 							"fontWeight": "400",
 							"src": [
-								"file:./assets/fonts/montserrat/Montserrat-Regular.ttf"
+								"file:./assets/fonts/montserrat/Montserrat-Regular.ttf",
+								"file:./assets/fonts/montserrat/Montserrat-Regular.woff2",
+								"file:./assets/fonts/montserrat/Montserrat-Regular.woff"
 							]
 						},
 						{
@@ -76,7 +78,9 @@
 							"fontStyle": "normal",
 							"fontWeight": "600",
 							"src": [
-								"file:./assets/fonts/montserrat/Montserrat-SemiBold.ttf"
+								"file:./assets/fonts/montserrat/Montserrat-SemiBold.ttf",
+								"file:./assets/fonts/montserrat/Montserrat-SemiBold.woff2",
+								"file:./assets/fonts/montserrat/Montserrat-SemiBold.woff"
 							]
 						}
 					],
@@ -92,7 +96,9 @@
 							"fontStyle": "normal",
 							"fontWeight": "400",
 							"src": [
-								"file:./assets/fonts/grown/grown.ttf"
+								"file:./assets/fonts/grown/grown.ttf",
+								"file:./assets/fonts/grown/grown.woff2",
+								"file:./assets/fonts/grown/grown.woff"
 							]
 						}
 					],
@@ -148,6 +154,17 @@
 					"fontStyle": "normal",
 					"fontWeight": "600",
 					"textTransform": "uppercase"
+				}
+			},
+			"core/navigation": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--montserrat)",
+					"fontSize": "var(--wp--preset--font-size--small)"
+				}
+			},
+			"core/navigation-link": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
 			"core/pullquote": {
@@ -327,9 +344,9 @@
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--montserrat)",
-					"fontSize": "14px",
+					"fontSize": "var(--wp--preset--font-size--small)",
 					"fontStyle": "normal",
-					"fontWeight": "400",
+					"fontWeight": "600",
 					"textDecoration": "underline"
 				}
 			}
