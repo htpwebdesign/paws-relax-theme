@@ -173,6 +173,8 @@ Update URI: false
   grid-template-columns: repeat(2, 150px);
 }
 
+
+
 /* Single Service Page Styling */
 .woocommerce-product-gallery__image img {
   border-radius: 24px;
@@ -305,7 +307,7 @@ Update URI: false
   font-weight: 600;
 }
 
-/* Hamburger  Text Style */
+/* Hamburger Text Style */
 
 @media (max-width: 37.5em) {
   li .wp-block-navigation-item__content {
@@ -351,4 +353,11 @@ Update URI: false
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+
+/* Checkout page styling */
+
+#gform_submit_button_2{
+  background-color: #5c757a;
 }
