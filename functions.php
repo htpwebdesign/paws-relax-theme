@@ -328,10 +328,3 @@ function paws_enqueue_aos()
     );
 }
 add_action('wp_enqueue_scripts', 'paws_enqueue_aos');
-
-
-// Customize "Order Details" Heading to "Booking Details"
-function change_order_details_heading( $heading ) {
-    return 'Booking details'; // Directly set the desired string
-}
-add_filter( 'woocommerce_order_details_heading', 'change_order_details_heading' );
