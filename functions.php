@@ -39,16 +39,6 @@ function paws_enqueues()
         false // Load in the footer
     );
 
-
-    // Checkout Page Button JavaScript file
-    // wp_enqueue_script(
-    //     'custom-gravity-woocommerce',
-    //     get_template_directory_uri() . '/assets/js/custom-gravity.js',
-    //     array(),
-    //     null,
-    //     true // Load in the footer
-    // );
-
     // AJAX URL for team details
     wp_localize_script(
         'team-details-modal',
@@ -306,14 +296,6 @@ function customize_admin_menu_for_shop_manager()
 add_action('admin_menu', 'customize_admin_menu_for_shop_manager');
 
 
-// Enable Ajax for Booking Details Form
-// add_filter('gform_ajax', function($is_ajax_enabled, $form) {
-//     if ($form['id'] == 2) { // Replace 2 with your form ID
-//         return true;
-//     }
-//     return $is_ajax_enabled;
-// }, 10, 2);
-
 /**
  * Enqueue AOS (Animate On Scroll) library
  */
@@ -346,3 +328,10 @@ function paws_enqueue_aos()
     );
 }
 add_action('wp_enqueue_scripts', 'paws_enqueue_aos');
+
+
+// Customize "Order Details" Heading to "Booking Details"
+function change_order_details_heading( $heading ) {
+    return 'Booking details'; // Directly set the desired string
+}
+add_filter( 'woocommerce_order_details_heading', 'change_order_details_heading' );
