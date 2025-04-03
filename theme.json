@@ -156,6 +156,17 @@
 					"textTransform": "uppercase"
 				}
 			},
+			"core/navigation": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--montserrat)",
+					"fontSize": "var(--wp--preset--font-size--small)"
+				}
+			},
+			"core/navigation-link": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)"
+				}
+			},
 			"core/pullquote": {
 				"border": {
 					"bottom": {
@@ -333,9 +344,9 @@
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--montserrat)",
-					"fontSize": "14px",
+					"fontSize": "var(--wp--preset--font-size--small)",
 					"fontStyle": "normal",
-					"fontWeight": "400",
+					"fontWeight": "600",
 					"textDecoration": "underline"
 				}
 			}
