@@ -232,14 +232,6 @@ function custom_taxonomy_link($url, $term, $taxonomy)
     return $url;
 }
 
-// Get a Icon from font-awesome
-function load_font_awesome()
-{
-    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
-}
-add_action('wp_enqueue_scripts', 'load_font_awesome');
-
-
 // Custom Login
 function custom_login_logo_url()
 {
@@ -270,7 +262,10 @@ function custom_menu_order_for_shop_manager($menu_ord)
             'index.php',                 //dashboard
             'woocommerce',               // WooCommerce
             'edit.php?post_type=product', // product
-            'edit.php?post_type=shop_order', // oders
+            'edit.php?post_type=shop_order', // orders
+            'edit.php?post_type=paws-team',       // Team CPT
+            'edit.php?post_type=paws-testimonial',// Testimonial CPT
+            'edit.php?post_type=paws-faq',       // FAQs CPT
             'upload.php',                // media
             'edit.php?post_type=page',   // pages
             'edit.php',                  // posts
@@ -328,3 +323,192 @@ function paws_enqueue_aos()
     );
 }
 add_action('wp_enqueue_scripts', 'paws_enqueue_aos');
+
+
+// custom dashboard for shop manager
+
+// Hook to setup all custom dashboard widgets
+add_action('wp_dashboard_setup', 'setup_shop_manager_dashboard_widgets');
+
+function setup_shop_manager_dashboard_widgets()
+{
+    // Only show to Shop Managers (not Admins)
+    if (current_user_can('shop_manager') && !current_user_can('manage_options')) {
+        wp_add_dashboard_widget(
+            'shop_manager_guide_video',
+            '🎥 Shop Manager Guide',
+            'render_custom_guide_video_widget'
+        );
+
+        wp_add_dashboard_widget(
+            'shop_manager_sales_summary',
+            '📊 Sales Summary (This Month)',
+            'render_sales_summary_widget'
+        );
+
+        wp_add_dashboard_widget(
+            'shop_manager_booking_overview',
+            '📅 Today\'s Bookings',
+            'render_booking_overview_widget'
+        );
+
+        wp_add_dashboard_widget(
+            'shop_manager_admin_notices',
+            '📢 Admin Notices',
+            'render_admin_notices_widget'
+        );
+    }
+}
+
+function render_custom_guide_video_widget()
+{
+?>
+    <p>Welcome! Here's a short video to guide you through the basics:</p>
+
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+        <iframe
+            src="https://www.youtube.com/embed/영상_ID"
+            frameborder="0"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;">
+        </iframe>
+    </div>
+
+    <p style="margin-top: 15px;">
+        👉 <a href="/shop-manager-guide.pdf" target="_blank">Download PDF Guide</a><br>
+        👉 <a href="/help-center" target="_blank">Visit Help Center</a>
+    </p>
+<?php
+}
+
+function render_sales_summary_widget()
+{
+    if (!class_exists('WooCommerce')) {
+        echo '<p>WooCommerce not active.</p>';
+        return;
+    }
+
+    $start = strtotime(date('Y-m-01'));
+    $end = strtotime(date('Y-m-t') . ' 23:59:59');
+
+    $orders = wc_get_orders(array(
+        'limit' => -1,
+        'status' => array('wc-processing', 'wc-completed'),
+        'date_paid' => $start . '...' . $end,
+    ));
+
+    $total_sales = 0;
+    foreach ($orders as $order) {
+        $total_sales += $order->get_total();
+    }
+
+    $order_count = count($orders);
+    $avg_order = $order_count ? $total_sales / $order_count : 0;
+
+    echo "<ul>
+        <li><strong>Total Orders:</strong> {$order_count}</li>
+        <li><strong>Total Sales:</strong> " . wc_price($total_sales) . "</li>
+        <li><strong>Average Order:</strong> " . wc_price($avg_order) . "</li>
+    </ul>";
+}
+
+function render_booking_overview_widget()
+{
+    if (!function_exists('get_wc_booking_statuses')) {
+        echo '<p>WooCommerce Bookings is not active.</p>';
+        return;
+    }
+
+    $today_start = date('Y-m-d 00:00:00');
+    $today_end = date('Y-m-d 23:59:59');
+
+    $args = array(
+        'post_type' => 'wc_booking',
+        'posts_per_page' => 5,
+        'post_status' => array_keys(get_wc_booking_statuses()),
+        'meta_query' => array(
+            array(
+                'key'     => '_booking_start',
+                'value'   => array(strtotime($today_start), strtotime($today_end)),
+                'compare' => 'BETWEEN',
+                'type'    => 'NUMERIC',
+            ),
+        ),
+    );
+
+    $bookings = get_posts($args);
+
+    if (!empty($bookings)) {
+        echo '<ul>';
+        foreach ($bookings as $booking_post) {
+            $booking = new WC_Booking($booking_post->ID);
+            $start = $booking->get_start_date(null, 'H:i');
+            $end = $booking->get_end_date(null, 'H:i');
+            $status = get_post_status($booking_post->ID);
+            $product = $booking->get_product();
+            $service_name = $product ? $product->get_title() : 'Unknown Service';
+
+            $customer = $booking->get_customer();
+            $name = $customer ? $customer->get_first_name() . ' ' . $customer->get_last_name() : 'Unknown';
+            $email = $customer ? $customer->get_email() : 'N/A';
+
+            echo '<li style="margin-bottom: 10px;">';
+            echo "<strong>$start - $end</strong><br>";
+            echo "👤 $name ($email)<br>";
+            echo "🛠️ Service: $service_name<br>";
+            echo "📌 Status: $status";
+            echo '</li>';
+        }
+        echo '</ul>';
+    } else {
+        echo '<p>No bookings for today.</p>';
+    }
+}
+
+function render_admin_notices_widget()
+{
+?>
+    <ul style="padding-left: 20px; list-style-type: disc;">
+        <li><strong>Weekly restock</strong> due by Friday.</li>
+        <li>New pricing update scheduled for <strong>April 15</strong>.</li>
+        <li>Check customer reviews weekly and reply if needed.</li>
+    </ul>
+    <p style="margin-top: 10px;">
+        ✏️ <em>To update this list, please contact your site administrator.</em>
+    </p>
+<?php
+}
+
+// Allow SVG
+add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
+
+    global $wp_version;
+    if ( $wp_version !== '4.7.1' ) {
+       return $data;
+    }
+  
+    $filetype = wp_check_filetype( $filename, $mimes );
+  
+    return [
+        'ext'             => $filetype['ext'],
+        'type'            => $filetype['type'],
+        'proper_filename' => $data['proper_filename']
+    ];
+  
+  }, 10, 4 );
+  
+  function cc_mime_types( $mimes ){
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+  }
+  add_filter( 'upload_mimes', 'cc_mime_types' );
+  
+  function fix_svg() {
+    echo '<style type="text/css">
+          .attachment-266x266, .thumbnail img {
+               width: 100% !important;
+               height: auto !important;
+          }
+          </style>';
+  }
+  add_action( 'admin_head', 'fix_svg' );

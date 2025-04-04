@@ -82,7 +82,7 @@ Update URI: false
 
 /* testimonials */
 .home .wp-block-pullquote {
-  min-height: 20rem;
+  min-height: 17rem;
   border: 2px solid black;
   border-radius: 24px;
   padding: 1rem;
@@ -93,30 +93,27 @@ Update URI: false
   flex-direction: column;
 }
 
-.home .wp-block-pullquote blockquote p {
-  height: 13rem;
-}
-
 .wp-block-pullquote p::before {
-  content: "\f10d";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  font-size: 50px;
-  color: #747f64;
-  margin-right: 10px;
+  content: '';
   display: block;
-  text-align: left;
+  width: 60px;
+  height: 60px;
+  background-image: url('https://pawsandrelax.bcitwebdeveloper.ca/wp-content/uploads/2025/04/quote-left-solid.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .wp-block-pullquote cite::before {
-  content: "\f007";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 800;
-  font-size: 30px;
-  color: #747f64;
-  margin-right: 10px;
-  font-style: normal;
-}
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url('https://pawsandrelax.bcitwebdeveloper.ca/wp-content/uploads/2025/04/user-solid.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 8px;
+  vertical-align: middle;
+} 
 
 .home .woocommerce ul.products li.product .woocommerce-loop-product__title {
   font-family: "Montserrat", sans-serif;
