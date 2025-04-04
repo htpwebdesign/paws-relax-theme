@@ -512,3 +512,8 @@ add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mime
           </style>';
   }
   add_action( 'admin_head', 'fix_svg' );
+
+  function yoast_to_bottom(){
+	return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
