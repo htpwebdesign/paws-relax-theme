@@ -20,6 +20,7 @@ function paws_enqueues()
         'all'
     );
 
+    // Single Page Product Button JavaScript File
     wp_enqueue_script(
         'single-product-button',
         get_template_directory_uri() . '/assets/js/single-product-button.js',
@@ -293,6 +294,7 @@ function customize_admin_menu_for_shop_manager()
     }
 }
 add_action('admin_menu', 'customize_admin_menu_for_shop_manager');
+
 
 /**
  * Enqueue AOS (Animate On Scroll) library
