@@ -360,7 +360,7 @@ function setup_shop_manager_dashboard_widgets()
     }
 }
 
-ffunction render_custom_guide_video_widget() {
+function render_custom_guide_video_widget() {
     // Array of video data
     $videos = array(
         array(
