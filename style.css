@@ -53,6 +53,7 @@ Update URI: false
 .wp-block-woocommerce-product-template li {
   border: solid 3px #5c757a;
   border-radius: 24px;
+  overflow: hidden;
 }
 
 /* Home Page Styling */
