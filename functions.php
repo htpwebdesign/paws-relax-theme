@@ -289,7 +289,7 @@ function customize_admin_menu_for_shop_manager()
         remove_menu_page('edit-comments.php');
     }
 }
-add_action('admin_menu', 'customize_admin_menu_for_shop_manager');
+add_action('admin_menu', 'customize_admin_menu_for_shop_manager', 999);
 
 
 /**
