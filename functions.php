@@ -360,26 +360,40 @@ function setup_shop_manager_dashboard_widgets()
     }
 }
 
-function render_custom_guide_video_widget()
-{
-?>
-    <p>Welcome! Here's a short video to guide you through the basics:</p>
+function render_custom_guide_video_widget() {
+    // Array of video data
+    $videos = array(
+        array(
+            'title' => '1. How to Manage Bookings',
+            'src' => 'https://pawsandrelax.bcitwebdeveloper.ca/wp-content/uploads/2025/04/booking-tutorial.mp4',
+        ),
+        array(
+            'title' => '2. How to Add or Edit Products',
+            'src' => 'https://pawsandrelax.bcitwebdeveloper.ca/wp-content/uploads/2025/04/product-tutorial.mp4',
+        ),
+        array(
+            'title' => '3. How to Add or Edit Team Members',
+            'src' => 'https://pawsandrelax.bcitwebdeveloper.ca/wp-content/uploads/2025/04/team-tutorial.mp4',
+        ),
+    );
+    ?>
+    <p>Welcome! Here are the training videos for Shop Managers:</p>
 
-    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-        <iframe
-            src="https://www.youtube.com/embed/영상_ID"
-            frameborder="0"
-            allowfullscreen
-            style="position:absolute;top:0;left:0;width:100%;height:100%;">
-        </iframe>
+    <div style="display: flex; flex-direction: column; gap: 30px;">
+        <?php foreach ($videos as $video) : ?>
+            <div style="width: 100%; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden;">
+                <h4 style="margin: 10px 0;"><?php echo esc_html($video['title']); ?></h4>
+                <video width="100%" height="auto" controls>
+                    <source src="<?php echo esc_url($video['src']); ?>" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        <?php endforeach; ?>
     </div>
 
-    <p style="margin-top: 15px;">
-        👉 <a href="/shop-manager-guide.pdf" target="_blank">Download PDF Guide</a><br>
-        👉 <a href="/help-center" target="_blank">Visit Help Center</a>
-    </p>
-<?php
+    <?php
 }
+
 
 function render_sales_summary_widget()
 {
