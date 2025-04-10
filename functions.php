@@ -286,6 +286,7 @@ function customize_admin_menu_for_shop_manager()
         remove_menu_page('themes.php');
         remove_menu_page('plugins.php');
         remove_menu_page('tools.php');
+        remove_menu_page('edit-comments.php');
     }
 }
 add_action('admin_menu', 'customize_admin_menu_for_shop_manager');
